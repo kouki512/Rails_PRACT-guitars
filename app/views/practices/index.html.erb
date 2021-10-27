@@ -1,0 +1,47 @@
+<h1>練習記録一覧</h1>
+  <table>
+    <tbody>
+      <% @practices.each do |practice|  %>
+        <div class="practice-menu">
+            <tr>
+              <th>タイトル</th>
+              <td><%= practice.title %></td>
+            </tr>
+            <tr>
+              <th>練習メモ</th>
+              <td><%= practice.body %></td>
+            </tr>
+            <tr>
+              <th>練習教材</th>
+              <td> 
+              <% if practice.url.present? %> <!-- URLが投稿されていた場合 -->
+                <a href="<%= practice.url %>">
+                  <% if practice.url_title.present? %> <!-- URLタイトルが投稿されていた場合そちらを出力 -->
+                    <%= practice.url_title %>
+                  <% else %>
+                    <%= practice.url %>
+                  <% end %>
+                </a>
+              <% else %>
+                <p><%= practice.url_title %></p>  
+              <% end %>
+              </td>
+              
+            </tr>
+            <tr>
+              <th>練習状況</th>
+              <td>
+                <% if practice.is_finish == false %>
+                  <p>練習中</p>
+                <% else %>
+                  <p>練習完了！</p>
+                <% end %>
+              </td>
+            </tr>
+        </div>
+      <% end %>
+    </tbody>
+  </table>  
+
+
+<%= link_to "新しく記録する", new_practice_path %>

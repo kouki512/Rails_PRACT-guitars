@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="new-practice">
+      <%= form_with model:@practice, local:true do |f| %>
+        <table>
+          <tbody>
+              <tr>
+                  <td><%= f.label "タイトル" %></td>
+                  <td> <%= f.text_field :title %></td>
+              </tr>
+              <tr>
+                  <td><%= f.label "練習メモ" %></td>
+                  <td> <%= f.text_field :body %></td>
+              </tr>
+              <tr>
+              <tr>
+                  <td><h2>使用教材</h2></td>
+                  <td><%= f.label "教材のタイトル" %></td>
+                  <td><%= f.text_field :url_title %></td>
+                  <td><%= f.label "教材のURL" %></td>
+                  <td><%= f.text_field :url %></td>
+              </tr>
+             
+              <tr>
+                  <td><%= f.label "練習状況" %></td>
+                  <td>
+                      <%= f.label "練習中" %> <%= f.radio_button :is_finish, :false %>
+                      <%= f.label "練習完了！"%><%= f.radio_button :is_finish, :true %>
+                  </td> 
+              </tr>
+              <tr>
+                  <td><%= f.label "公開設定" %></td>
+                  <td>
+                      <%= f.label "公開"%><%= f.radio_button :is_public, :true %>
+                      <%= f.label "プライベート" %> <%= f.radio_button :is_public, :false %>
+                  </td> 
+              </tr>
+              
+                  <td><%= f.submit "新規登録" %> </td>
+          </tbody>
+      </table>
+      <% end %>
+    </div>
+  </div>
+</div>

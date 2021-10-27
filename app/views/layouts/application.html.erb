@@ -10,6 +10,29 @@
   </head>
 
   <body>
+    <header class="header">
+      <h1 class="header-logo">ロゴ</h1>
+      <% if user_signed_in? %>
+        <ul class = "header-container">
+          <li class="header-list">
+            <%= link_to "練習記録", practices_path %>
+           
+          </li>
+          <li class="header-list">
+            <%= link_to "ログアウト", destroy_user_session_path %>
+          </li>
+        </ul>
+      <% else %>
+        <ul class = "header-container">
+          <li class="header-list">
+            <%= link_to "新規登録",new_user_registration_path %>
+          </li>
+          <li class="header-list">
+            <%= link_to "ログイン", new_user_session_path %>
+          </li>
+        </ul>
+      <% end %>
+    </header>
     <%= yield %>
   </body>
 </html>

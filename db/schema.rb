@@ -27,9 +27,11 @@ ActiveRecord::Schema.define(version: 2021_10_26_231546) do
 
   create_table "practices", force: :cascade do |t|
     t.string "title"
-    t.string "url"
-    t.string "body"
-    t.string "url_title"
+    t.text "body"
+    t.string "reference_url"
+    t.string "reference_title"
+    t.integer "textbook", default: 0, null: false
+    t.string "other_text"
     t.boolean "is_public", default: false
     t.boolean "is_finish", default: false
     t.integer "user_id"

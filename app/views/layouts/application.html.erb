@@ -11,15 +11,19 @@
 
   <body>
     <header class="header">
-      <h1 class="header-logo">ロゴ</h1>
+      <%= link_to root_path do %>
+        <h1 class = "header-logo">ロゴ</h1>
+      <% end %>
       <% if user_signed_in? %>
         <ul class = "header-container">
           <li class="header-list">
-            <%= link_to "練習記録", practices_path %>
-           
+            <%= link_to "練習記録", user_path(current_user) %>
           </li>
           <li class="header-list">
-            <%= link_to "ログアウト", destroy_user_session_path %>
+            <%= link_to "みんなの練習を見る", practices_path %>
+          </li>
+          <li class="header-list">
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
           </li>
         </ul>
       <% else %>

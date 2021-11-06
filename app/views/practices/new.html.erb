@@ -5,20 +5,31 @@
         <table>
           <tbody>
               <tr>
-                  <td><%= f.label "タイトル" %></td>
+                  <td><%= f.label "使用教材" %></td>
+                  <td><%= f.select :textbook, Practice.textbooks_i18n.invert ,{include_blank: '選択ボックス'} %></td>
+              </tr>
+              <!-- Jquery使用 -->
+              <tr>
+                <td><%= f.label "その他の教材" %></td>
+                <td><%= f.text_field :other_text %></td>
+              </tr>
+              <!-- *** -->
+              <tr>
+                <td><%= f.label "教材のリンク" %></td>
+                <td><%= f.text_field :reference_url %></td>
+              </tr>
+              <tr>
+                  <td><%= f.label "練習内容" %></td>
                   <td> <%= f.text_field :title %></td>
+              </tr>
+              
+              <tr>
+                  <td><%= f.label "詳細な練習内容" %></td>
+                  <td><%= f.text_area :reference_title %></td>
               </tr>
               <tr>
                   <td><%= f.label "練習メモ" %></td>
-                  <td> <%= f.text_field :body %></td>
-              </tr>
-              <tr>
-              <tr>
-                  <td><h2>使用教材</h2></td>
-                  <td><%= f.label "教材のタイトル" %></td>
-                  <td><%= f.text_field :url_title %></td>
-                  <td><%= f.label "教材のURL" %></td>
-                  <td><%= f.text_field :url %></td>
+                  <td> <%= f.text_area :body %></td>
               </tr>
              
               <tr>

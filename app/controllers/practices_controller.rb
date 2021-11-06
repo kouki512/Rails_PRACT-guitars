@@ -1,6 +1,7 @@
 class PracticesController < ApplicationController
   def index
     @practices = Practice.all
+    
   end
 
   def new
@@ -16,6 +17,7 @@ class PracticesController < ApplicationController
 
   def show
     @practice = Practice.find(params[:id])
+    @user = @practice.user
   end
 
   def edit
@@ -37,7 +39,7 @@ class PracticesController < ApplicationController
   private
 
   def practices_params
-    params.require(:practice).permit(:title,:url,:url_title,:body,:is_public,:is_finish)
+    params.require(:practice).permit(:title,:reference_url,:reference_title,:other_text,:body,:is_public,:is_finish,:textbook)
   end
 
 

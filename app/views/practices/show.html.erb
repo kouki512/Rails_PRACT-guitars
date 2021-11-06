@@ -7,21 +7,22 @@
               <td><%= @practice.title %></td>
             </tr>
             <tr>
-              <th>練習メモ</th>
-              <td><%= @practice.body %></td>
+              <th>使用教材</th>
+              <td>
+              <%= @practice.textbook_i18n %></a>
+              </td>
             </tr>
             <tr>
-              <th>練習教材</th>
+              <th>参考URL</th>
               <td> 
-                <a href="<%= @practice.url %>">
-                  <% if @practice.url_title.present? %> <!-- URLタイトルが投稿されていた場合そちらを出力 -->
-                    <%= @practice.url_title %>
-                  <% else %>
-                    <%= @practice.url %>
-                  <% end %>
-                </a>
+              <a href= <%= @practice.reference_url %>><%= @practice.reference_url %></a>
+              
               </td>
               
+            </tr>
+            <tr>
+              <th>練習メモ</th>
+              <td><%= @practice.body %></td>
             </tr>
             <tr>
               <th>練習状況</th>

@@ -24,7 +24,7 @@
   height: auto;
 }
 .practice-menu{
- width: 90%;
+ //width: 90%;
 }
 .practice-title-contents{
   font-size: 22px;
@@ -72,5 +72,10 @@
 .practice-natural-link{
   font-size: 12px;
   color: #333;
+}
+// ***
+// show.html.erb
+.practice-detail-container{
+  margin-top: 50px;
 }
 // ***

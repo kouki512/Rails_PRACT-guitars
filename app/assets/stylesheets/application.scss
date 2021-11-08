@@ -38,7 +38,12 @@ body{
 }
 .main{
   
-  width: 90%;
+  width: 95%;
   height: 100%;
   margin: 0 auto;
+}
+iframe{
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
 }

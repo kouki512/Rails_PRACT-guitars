@@ -29,7 +29,8 @@ ActiveRecord::Schema.define(version: 2021_10_26_231546) do
     t.string "title"
     t.text "body"
     t.string "reference_url"
-    t.string "reference_title"
+    t.string "details"
+    t.string "youtube_url"
     t.integer "textbook", default: 0, null: false
     t.string "other_text"
     t.boolean "is_public", default: false

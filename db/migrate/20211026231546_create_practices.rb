@@ -4,7 +4,8 @@ class CreatePractices < ActiveRecord::Migration[5.2]
       t.string :title
       t.text :body
       t.string :reference_url
-      t.string :reference_title
+      t.string :details
+      t.string :youtube_url
       t.integer :textbook, default: 0, null:false
       t.string :other_text
       t.boolean :is_public , default: false

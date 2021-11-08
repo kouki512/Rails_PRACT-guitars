@@ -28,13 +28,18 @@
 }
 .practice-title-contents{
   font-size: 22px;
+  font-weight: bold;
   margin-bottom: 20px;
+  border-bottom: 1px solid #333;
   text-align: center;
   color: #333;
 
   overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+.practice-title-link{
+  color: #333;
 }
 .practice-memo{
   font-size: 16px;
@@ -49,6 +54,10 @@
 .practice-textbook{
   margin-bottom: 15px;
 }
+.practice-more{
+  font-size: 14px;
+  text-align: right;
+}
 .practice-link{
   text-align: center;
   border-top: 1px solid #eee;
@@ -58,9 +67,10 @@
   font-size: 20px;
   text-decoration: none;
   color: #0bd;
-  
+  display: block;
 }
 .practice-natural-link{
   font-size: 12px;
+  color: #333;
 }
 // ***

@@ -2,24 +2,65 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.practice-index{
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
 //_index.html.erb
 .practice-container{
-  width: 95%;
+  width: 380px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #ccc;
   margin: 10px auto;
-  border: 1;
+  
+  padding: 20px;
+}
+.user-image{
+  border-radius: 5px 5px 0 0;
+  max-width: 100%;
+  height: auto;
 }
 .practice-menu{
-  display: flex;
-  width: 100%;
+ width: 90%;
 }
-
-.user-image-content{
-  vertical-align: middle;
-}
-.practice-content{
-
+.practice-title-contents{
+  font-size: 22px;
+  margin-bottom: 20px;
   text-align: center;
-  width: 70%;
-}
+  color: #333;
 
+  overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.practice-memo{
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  overflow-wrap: break-word;
+  display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden; 
+}
+.practice-textbook{
+  margin-bottom: 15px;
+}
+.practice-link{
+  text-align: center;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+.practice-link a{
+  font-size: 20px;
+  text-decoration: none;
+  color: #0bd;
+  
+}
+.practice-natural-link{
+  font-size: 12px;
+}
 // ***

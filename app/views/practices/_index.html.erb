@@ -1,56 +1,26 @@
-
-        <div class="practice-menu">
-            <tr>
-              <th>参考教材（Uフレット等）</th>
-              <td>
-                  <%= practice.textbook_i18n %>
-              </td>
-            </tr>
-            <tr>
-              <th>教材のリンク</th>
-              <td> 
-              <% if practice.reference_url.present? %> <!-- URLが投稿されていた場合 -->
-                <a href="<%= practice.reference_url %>" target="_blank" rel="noopener noreferrer">練習する！</a>
-              <% else %>
-                リンクが投稿されていません
-              <% end %>
-              </td>
-            </tr>
-            <tr>
-              <th>練習内容</th>
-              <td><%= practice.title %></td>
-            </tr>
-            <tr>
-              <th>練習内容詳細</th>
-              <td><%= practice.reference_title %></td>
-            </tr>
-            <tr>
-              <th>練習メモ</th>
-              <td><%= practice.body %></td>
-            </tr>
-            <tr>
-              <th>練習状況</th>
-              <td>
-                <% if practice.is_finish == false %>
-                  練習中
+    <div class="practice-container">
+         <div class="practice-menu">
+            <div class="user-image">
+              <%= link_to "ユーザ", root_path, class:"user-image-content"%>
+            </div>
+            <div class="practice-content">
+              <div class="practice-title">
+                <%= practice.title %>
+              </div>
+              <div class="practice-link">
+                <% if practice.reference_url.present? %> <!-- URLが投稿されていた場合 -->
+                  <a href="<%= practice.reference_url %>" target="_blank" rel="noopener noreferrer"class="gene-btn">練習する！</a>
                 <% else %>
-                  練習完了！
+                  リンクが投稿されていません
                 <% end %>
-              </td>
-            </tr>
-            <tr>
-              <th>投稿者</th>
-              <td><%= link_to practice.user.name, user_path(practice.user) %></td><!-- 投稿者の詳細ページに遷移 -->
-            </tr>
-
-            <tr>
-              <th></th>
-              <td>
-               <h3><%= link_to "もっと見る", practice_path(practice) %></h3>
-              </td>
-            </tr>
-        </div>
-       
+              </div>
+            </div>
+            <div class="practice-show">
+              <%= link_to "もっと見る", practice_path(practice), class: "gene-btn" %>
+            </div>
+         </div>
+      </div> 
+            
 
 
 

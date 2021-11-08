@@ -1,3 +1,25 @@
 // Place all the styles related to the practices controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//_index.html.erb
+.practice-container{
+  width: 95%;
+  margin: 10px auto;
+  border: 1;
+}
+.practice-menu{
+  display: flex;
+  width: 100%;
+}
+
+.user-image-content{
+  vertical-align: middle;
+}
+.practice-content{
+
+  text-align: center;
+  width: 70%;
+}
+
+// ***

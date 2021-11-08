@@ -3,10 +3,6 @@
       
         <div class="practice-menu">
             <tr>
-              <th>タイトル</th>
-              <td><%= @practice.title %></td>
-            </tr>
-            <tr>
               <th>使用教材</th>
               <td>
               <%= @practice.textbook_i18n %></a>
@@ -15,10 +11,20 @@
             <tr>
               <th>参考URL</th>
               <td> 
-              <a href= <%= @practice.reference_url %>><%= @practice.reference_url %></a>
-              
+              <% if @practice.reference_url.present? %> <!-- URLが投稿されていた場合 -->
+                <a href="<%= @practice.reference_url %>" target="_blank" rel="noopener noreferrer"class="gene-btn">練習する！</a>
+              <% else %>
+                リンクが投稿されていません
+              <% end %>
               </td>
-              
+            </tr>
+            <tr>
+              <th>練習内容</th>
+              <td><%= @practice.title %></td>
+            </tr>
+            <tr>
+              <th>練習詳細</th>
+              <td><%= @practice.reference_title %></td>
             </tr>
             <tr>
               <th>練習メモ</th>
@@ -28,9 +34,9 @@
               <th>練習状況</th>
               <td>
                 <% if @practice.is_finish == false %>
-                  <p>練習中</p>
+                  練習中
                 <% else %>
-                  <p>練習完了！</p>
+                  練習完了！
                 <% end %>
               </td>
             </tr>
@@ -38,9 +44,9 @@
               <th>公開設定</th>
               <td>
                 <% if @practice.is_public == false %>
-                  <p>プライベート</p>
+                  プライベート
                 <% else %>
-                  <p>公開中</p>
+                  公開中
                 <% end %>
               </td>
             </tr>

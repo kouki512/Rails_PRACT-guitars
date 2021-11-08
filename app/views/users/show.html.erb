@@ -1,6 +1,6 @@
 <h1>私の練習記録</h1>
-<h2><%= link_to "新しく記録する", new_practice_path %></h2>
- <table>
+<h2 ><%= link_to "新しく記録する", new_practice_path, class: "gene-btn" %></h2>
+ <table class="practice-container">
     <tbody>
       <% @practice.each do |practice|  %>
         <%= render 'practices/index',practice:practice %>

@@ -56,7 +56,7 @@ class PracticesController < ApplicationController
   def check_is_movie(practice)
    # youtubeリンクの有無でGridシステムを変更
     if practice.textbook == "youtube" && practice.youtube_url.present?
-      return 4 # gridシステム col-md-5
+      return 5 # gridシステム col-md-5
     else
       return 12 # gridシステム col-md-12
     end

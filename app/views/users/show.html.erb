@@ -1,8 +1,11 @@
-<h1>私の練習記録</h1>
-<h2 ><%= link_to "新しく記録する", new_practice_path, class: "gene-btn" %></h2>
+<div class="practice-index-wrapper">
+    <div class="content-title">
+      <h1>みんなの練習記録</h1>
+      <%= link_to "新しく記録する", new_practice_path,class:" practice-btn create-btn" %>
+    </div>
     <div class="practice-index">
       <% @practice.each do |practice|  %>
         <%= render 'practices/index',practice:practice %>
       <% end %>
     </div>
- 
+</div>

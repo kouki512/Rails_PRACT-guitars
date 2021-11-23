@@ -26,7 +26,7 @@
           <%= @practice.textbook_i18n %>
         </div>
         <div class="practice-option" >
-          <div class="">
+          <div class="practice-step">
           <h5>練習状況</h5>
           <% if @practice.is_finish == false %>
               練習中
@@ -46,7 +46,7 @@
         </div>
       </div>
   </div>
-    <div class="<%="col-lg-" + @ratio.to_s %> <%="col-xl-" + @ratio.to_s %> practice-content-others">
+    <div class="col-lg-3 col-xl-3 practice-content-others">
       <div class="practice-content-other"> 
           <div class="practice-referenece">
               <% if @practice.reference_url.present? %> <!-- URLが投稿されていた場合 -->
@@ -54,10 +54,12 @@
                 <a href="<%= @practice.reference_url %>" target="_blank" rel="noopener noreferrer">練習する！
                  <p class="practice-btn-alert">※外部サイトへ遷移します</p></a>
               </div>
+              <% if @user == current_user %>
               <div class="edit-link">
                   <%= link_to "編集する", edit_practice_path(@practice), class: "btn btn-success" %>
-                  <%= link_to "削除する", practice_path(@practice),method: :delete,class: "btn btn-danger"  %> 
+                  <%= link_to "削除する", practice_path(@practice),method: :delete,class: "btn btn-danger",data: {confirm: "削除しますか？"}  %> 
               </div>
+              <% end %>
             <% else %>
               リンクが投稿されていません
             <% end %>

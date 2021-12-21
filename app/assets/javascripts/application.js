@@ -18,3 +18,15 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+//user_show
+$(function(){
+  $('#card-back').hide();
+  $('.btn-open').on('click',()=>{
+    $('#card-back').show('slow');
+  });
+
+  $('.btn-close').on('click',()=>{
+    $('#card-back').hide('slow');
+  });
+});

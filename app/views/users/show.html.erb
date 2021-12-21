@@ -4,7 +4,7 @@
       <%= link_to "新しく記録する", new_practice_path,class:" practice-btn create-btn" %>
     </div>
     <div class="practice-index">
-      <% @practice.each do |practice|  %>
+      <% @practices.each do |practice|  %>
         <%= render 'practices/index',practice:practice %>
       <% end %>
     </div>

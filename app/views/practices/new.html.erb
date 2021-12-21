@@ -4,7 +4,7 @@
       <%= form_with model:@practice, local:true do |f| %>
         <table>
           <tbody>
-              <tr >
+              <tr>
                   <td><%= f.label "使用教材" %></td>
                   <td><%= f.select :textbook, Practice.textbooks_i18n.invert ,{include_blank: '選択ボックス'},class:"mb-2" %></td>
               </tr>

@@ -54,15 +54,15 @@
                 <a href="<%= @practice.reference_url %>" target="_blank" rel="noopener noreferrer">練習する！
                  <p class="practice-btn-alert">※外部サイトへ遷移します</p></a>
               </div>
+            <% else %>
+              リンクが投稿されていません
+            <% end %>
               <% if @user == current_user %>
               <div class="edit-link">
                   <%= link_to "編集する", edit_practice_path(@practice), class: "btn btn-success" %>
                   <%= link_to "削除する", practice_path(@practice),method: :delete,class: "btn btn-danger",data: {confirm: "削除しますか？"}  %> 
               </div>
               <% end %>
-            <% else %>
-              リンクが投稿されていません
-            <% end %>
           </div>
       </div>
     </div>

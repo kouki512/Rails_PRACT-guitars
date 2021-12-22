@@ -14,7 +14,12 @@
                 <%= practice.body %>
             </div>
             <div class="practice-textbook">
-                参考教材：<%= practice.textbook_i18n %>
+                参考教材：
+                <% if practice.textbook == "other" %>
+                  <%= practice.other_text %>
+                <% else %>
+                  <%= practice.textbook_i18n %>
+                <% end %>
             </div>
             <div class="practice-more">
               <p>もっと見る</p>

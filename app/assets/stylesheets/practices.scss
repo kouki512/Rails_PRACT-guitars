@@ -11,6 +11,8 @@
 }
 .content-title{
   text-align: center;
+  margin: 0 auto;
+  margin-top: 30px;
   @media screen and (max-width:767px){
     h1{
       font-size: 22px;
@@ -155,6 +157,11 @@
     color: #333;
   }
 }
+
+.genre-search{
+  border-left: 1px solid #000;
+  padding-left: 10px;
+}
 // ***
 // index-btn
 .create-btn{
@@ -179,4 +186,6 @@
   text-align: center;
   padding: 10px 20px;
 }
+
+
 //***

@@ -28,14 +28,14 @@
   margin: 0 auto;
   margin-top: 0.5em;
   margin-bottom: 20px;
-  
+  position: relative;
 }
   text-align: center;
   .card-img-container{
     width:20%;
     // height: 130px;
     margin: 0 auto;
-     background-color: #333;
+     //background-color: #333;
     // border-radius: 50%;
     .card-img{
       object-fit:cover;
@@ -72,3 +72,27 @@
   }
 }
 
+#card-back{
+  padding: 0 20px;
+}
+.user-option-btn{
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  font-size: 26px;
+  a{
+    color: #989898;
+  }
+}
+.social-links{
+    li{
+      a{
+        .fa-youtube-square{
+         
+          font-size: 26px;
+          color: red;
+        }
+
+      }
+    }
+  }

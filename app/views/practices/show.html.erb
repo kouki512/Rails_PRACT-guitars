@@ -1,0 +1,71 @@
+<div class="container-fluid practice-show">
+  <div class="row">
+  <div class="practice-detail-container col-lg-9 col-xl-9">
+    
+    <% if @practice.textbook == "youtube" && @practice.youtube_url.present? %>
+    <div class="aaa">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @practice.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <% end %>
+    <!--youtubeの動画が存在していたら専用のレイアウトに変更 -->
+    <div class="practice-menu">
+        <div class="practice-contents ">
+          <h5 class ="practice-contents-title ">練習内容</h5>
+          <%= @practice.title %>
+        </div>
+        <div class="practice-contents">
+          <h5 class ="practice-contents-title">練習詳細</h5>
+          <%= @practice.details %>
+        </div>
+        <div class="practice-contents">
+          <h5 class ="practice-contents-title">練習メモ</h5>
+          <%= @practice.body %>
+        </div>
+        <div class="practice-contents">
+          <h5 class ="practice-contents-title">教材</h5>
+          <%= @practice.textbook_i18n %>
+        </div>
+        <div class="practice-option" >
+          <div class="practice-step">
+          <h5>練習状況</h5>
+          <% if @practice.is_finish == false %>
+              練習中
+            <% else %>
+              練習完了！
+            <% end %>
+          
+          </div>
+          <div class="">
+          <h5 >公開設定</h5>
+          <% if @practice.is_public == false %>
+              プライベート
+          <% else %>
+              公開中
+          <% end %>
+        </div>
+        </div>
+      </div>
+  </div>
+    <div class="col-lg-3 col-xl-3 practice-content-others">
+      <div class="practice-content-other"> 
+          <div class="practice-referenece">
+              <% if @practice.reference_url.present? %> <!-- URLが投稿されていた場合 -->
+              <div class="practice-btn">
+                <a href="<%= @practice.reference_url %>" target="_blank" rel="noopener noreferrer">練習する！
+                 <p class="practice-btn-alert">※外部サイトへ遷移します</p></a>
+              </div>
+            <% else %>
+              リンクが投稿されていません
+            <% end %>
+              <% if @user == current_user %>
+              <div class="edit-link">
+                  <%= link_to "編集する", edit_practice_path(@practice), class: "btn btn-success" %>
+                  <%= link_to "削除する", practice_path(@practice),method: :delete,class: "btn btn-danger",data: {confirm: "削除しますか？"}  %> 
+              </div>
+              <% end %>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+

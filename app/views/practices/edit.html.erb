@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="new-practice edit-practice">
+      <%= form_with model:@practice, local:true do |f| %>
+        <table>
+          <tbody>
+               <tr>
+                  <td><%= f.label "使用教材" %></td>
+                  <td><%= f.select :textbook, Practice.textbooks_i18n.invert ,{include_blank: '選択ボックス'} %></td>
+              </tr>
+              <!-- Jquery使用 -->
+              <tr>
+                <td><%= f.label "その他の教材" %></td>
+                <td><%= f.text_field :other_text,class: "form-control mb-2" %></td>
+              </tr>
+              <!-- *** -->
+              <tr>
+                <td><%= f.label "教材のリンク" %></td>
+                <td><%= f.text_field :reference_url,class: "form-control mb-2" %></td>
+              </tr>
+              <tr>
+                  <td><%= f.label "練習内容" %></td>
+                  <td> <%= f.text_field :title,class: "form-control mb-2" %></td>
+              </tr>
+              
+              <tr>
+                  <td><%= f.label "詳細な練習内容" %></td>
+                  <td><%= f.text_area :details,class: "form-control mb-2" %></td>
+              </tr>
+              <tr>
+                  <td><%= f.label "練習メモ" %></td>
+                  <td> <%= f.text_area :body,class: "form-control mb-2" %></td>
+              </tr>
+             
+              <tr>
+                  <td><%= f.label "練習状況" %></td>
+                  <td>
+                      <%= f.label "練習中", class:"mr-1" %> <%= f.radio_button :is_finish, :false %>
+                      <%= f.label "練習完了！ ",class:"mr-1"%><%= f.radio_button :is_finish, :true %>
+                  </td> 
+              </tr>
+              <tr>
+                  <td><%= f.label "公開設定" %></td>
+                  <td>  
+                      <%= f.label "公開", class:"mr-1"%><%= f.radio_button :is_public, :true %>
+                      <%= f.label "プライベート" , class:"mr-1"%> <%= f.radio_button :is_public, :false %>
+                  </td> 
+              </tr>
+              
+                  <td><%= f.submit "編集" %> </td>
+          </tbody>
+      </table>
+      <% end %>
+    </div>
+  </div>
+</div>

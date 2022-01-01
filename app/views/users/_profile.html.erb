@@ -1,0 +1,62 @@
+<div class="profile-wrapper">
+  <div class="rotate-container">
+    <div class="card card-front">
+      <div class="card-background"></div>
+      <div class="card-block">
+        <div class="card-img-container">
+          <%= attachment_image_tag @user,:profile_image,:fill, 130,130,fallback:"no_image.jpg",class:"card-img" %>
+        </div>
+        <h3 class="card-title"><%= @user.name %></h3>
+        <p class = "tags">Time Traveler</p>
+        <button class="btn btn-primary btn-open">Read more &nbsp;
+          <i class="fa fa-long-arrow-right"></i>
+        </button>
+        <div class="user-option-btn">
+          <%= link_to edit_user_path(@user)  do %>
+            <i class="fas fa-cog"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class=" card" id ="card-back">
+      <div class="card-block">
+        <h4>Introduction</h4>
+        <p><%= @user.introduction %></p>
+        <h4>相棒</h4>
+        <p><%= @user.my_guitar %></p>
+        <h4>Connect:</h4>
+        <ul class="social-links list-unstyled d-flex justify-content-center">
+          <li><a href="<%= @user.youtube_channel_url %>" target="_blank"><i class="fab fa-youtube-square gene-btn"></i></a></li>
+          <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#" target="_blank"><i class="fa fa-snapchat"></i></a></li>
+          <li><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>
+        </ul>
+        <button class="btn btn-primary btn-rotate btn-close">
+          <i class="fa fa-long-arrow-left"></i>&nbsp;Back
+        </button>
+      </div>
+    </div> 
+    
+  </div>
+  
+  <div class="profile-infos-container">
+    <div class="profile-infos-index">
+      <div class="profile-info pen-num">
+        <h5>pen-num</h5>
+        <p>111</p>
+      </div>
+      <div class="profile-info follower-num">
+        <h5>follower</h5>
+        <p>111</p>
+      </div>
+      <div class="profile-info following-num">
+        <h5>followings</h5>
+        <p>111</p>
+      </div>
+    </div>
+  </div>
+  <div class="profile-follow-btn">
+
+  </div>
+</div>

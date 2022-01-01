@@ -1,4 +1,4 @@
-g# This file is auto-generated from the current state of the database. Instead
+# This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
@@ -10,7 +10,7 @@ g# This file is auto-generated from the current state of the database. Instead
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_17_141706) do
+ActiveRecord::Schema.define(version: 2021_10_26_231546) do
 
   create_table "guitars", force: :cascade do |t|
     t.string "name", null: false
@@ -21,6 +21,21 @@ ActiveRecord::Schema.define(version: 2021_10_17_141706) do
     t.string "shop_url"
     t.string "youtube_url"
     t.string "guitar_image_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "practices", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.string "reference_url"
+    t.string "details"
+    t.string "youtube_url"
+    t.integer "textbook", default: 0, null: false
+    t.string "other_text"
+    t.boolean "is_public", default: false
+    t.boolean "is_finish", default: false
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

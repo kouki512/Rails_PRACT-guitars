@@ -1,0 +1,9 @@
+ja:
+  enums:
+    practice:
+      textbook:
+        tab: "TAB譜サイト"
+        movie: "Youtube"
+        book: "書籍"
+        school: "スクール"
+        other: "その他"

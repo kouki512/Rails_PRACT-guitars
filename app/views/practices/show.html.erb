@@ -2,7 +2,7 @@
   <div class="row">
   <div class="practice-detail-container col-lg-8 col-xl-8">
 
-    <% if @practice.textbook == "youtube" && @practice.youtube_url.present? %>
+    <% if  @practice.youtube_url.present? %>
     <div class="aaa">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @practice.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>

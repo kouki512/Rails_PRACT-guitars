@@ -43,7 +43,8 @@ class PracticesController < ApplicationController
 
   def make_youtube_links
     # youtubeの埋め込みリンク作成
-    if params[:practice][:textbook] == "youtube" && params[:practice][:reference_url] != nil
+    youtube_initial_url = params[:practice][:reference_url]
+    if youtube_initial_url.include?("https://www.youtube.com/")
       url = params[:practice][:reference_url]
       url = url.last(11)
       return url

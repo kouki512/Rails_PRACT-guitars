@@ -18,6 +18,12 @@
                 <td><%= f.label "教材のリンク" %></td>
                 <td><%= f.text_field :reference_url,class: "form-control mb-2" %></td>
               </tr>
+
+              <tr>
+                <td><%= f.label "Tab譜の画像" %></td>
+                <td><%= f.attachment_field :practice_images_tab_images, multiple: true,class: "form-control mb-2" %></td>
+              </tr>
+
               <tr>
                   <td><%= f.label "練習内容" %></td>
                   <td> <%= f.text_field :title,class: "form-control mb-2" %></td>

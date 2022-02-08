@@ -1,12 +1,47 @@
-<div class="container-fluid practice-show">
+<div class="container-fluid practice-show ">
   <div class="row">
-  <div class="practice-detail-container col-lg-9 col-xl-9">
-    
+  <div class="practice-detail-container col-lg-8 col-xl-8">
+
     <% if @practice.textbook == "youtube" && @practice.youtube_url.present? %>
     <div class="aaa">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @practice.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <% end %>
+    <% if @practice.practice_images.present? %>
+    <div class="practice-tab-container ">
+      <div class="speed-select">
+        <p>スクロール速度：</p>
+        <%= select_tag "speed",options_for_select((1..50).to_a,:selected => 20 ) %>
+      </div>
+      <div class="scroll-button"> 
+        
+          <% @practice.practice_images.each do |tab_image| %>
+            <%= attachment_image_tag tab_image,:tab_image,class:"" %>
+          <% end %>
+        
+      </div>
+    </div>
+    <% end %>
+    <div class=" practice-content-others">
+      <div class="practice-content-other"> 
+          <div class="practice-referenece">
+              <% if @practice.reference_url.present? %> <!-- URLが投稿されていた場合 -->
+              <div class="practice-btn">
+                <a href="<%= @practice.reference_url %>" target="_blank" rel="noopener noreferrer">練習する！
+                 <p class="practice-btn-alert">※外部サイトへ遷移します</p></a>
+              </div>
+            <% else %>
+              リンクが投稿されていません
+            <% end %>
+              <% if @user == current_user %>
+              <div class="edit-link">
+                  <%= link_to "編集する", edit_practice_path(@practice), class: "btn btn-success" %>
+                  <%= link_to "削除する", practice_path(@practice),method: :delete,class: "btn btn-danger",data: {confirm: "削除しますか？"}  %> 
+              </div>
+              <% end %>
+          </div>
+      </div>
+    </div>
     <!--youtubeの動画が存在していたら専用のレイアウトに変更 -->
     <div class="practice-menu">
         <div class="practice-contents ">
@@ -45,27 +80,16 @@
         </div>
         </div>
       </div>
+    
   </div>
-    <div class="col-lg-3 col-xl-3 practice-content-others">
-      <div class="practice-content-other"> 
-          <div class="practice-referenece">
-              <% if @practice.reference_url.present? %> <!-- URLが投稿されていた場合 -->
-              <div class="practice-btn">
-                <a href="<%= @practice.reference_url %>" target="_blank" rel="noopener noreferrer">練習する！
-                 <p class="practice-btn-alert">※外部サイトへ遷移します</p></a>
-              </div>
-            <% else %>
-              リンクが投稿されていません
-            <% end %>
-              <% if @user == current_user %>
-              <div class="edit-link">
-                  <%= link_to "編集する", edit_practice_path(@practice), class: "btn btn-success" %>
-                  <%= link_to "削除する", practice_path(@practice),method: :delete,class: "btn btn-danger",data: {confirm: "削除しますか？"}  %> 
-              </div>
-              <% end %>
-          </div>
-      </div>
-    </div>
   </div>
 </div>
-
+<script>
+function scrollPage() {
+  var speed = document.getElementById("speed").value;// speedミリ秒ごとに発火
+  if($('div').hasClass('scroll-on')){
+    window.scrollBy(0,1);//1pxずつ下にずれる
+    setTimeout("scrollPage()",speed);
+  }
+}
+</script>

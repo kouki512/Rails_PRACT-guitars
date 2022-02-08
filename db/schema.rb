@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_26_231546) do
+ActiveRecord::Schema.define(version: 2022_02_08_092806) do
 
   create_table "guitars", force: :cascade do |t|
     t.string "name", null: false
@@ -21,6 +21,13 @@ ActiveRecord::Schema.define(version: 2021_10_26_231546) do
     t.string "shop_url"
     t.string "youtube_url"
     t.string "guitar_image_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "practice_images", force: :cascade do |t|
+    t.integer "practice_id"
+    t.string "tab_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

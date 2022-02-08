@@ -1,6 +1,6 @@
 class PracticesController < ApplicationController
   def index
-    @practices = Practice.all
+    @practices = current_user.practices
     
   end
 
@@ -19,8 +19,7 @@ class PracticesController < ApplicationController
   def show
     @practice = Practice.find(params[:id])
     @user = @practice.user
-    @ratio = check_is_movie(@practice) #メソッド使用
- 
+    #@ratio = check_is_movie(@practice) #メソッド使用
   end
 
   def edit
@@ -53,19 +52,19 @@ class PracticesController < ApplicationController
     end
   end
 
-  def check_is_movie(practice)
-   # youtubeリンクの有無でGridシステムを変更
-    if practice.textbook == "youtube" && practice.youtube_url.present?
-      return 3 # gridシステム col-md-5
-    else
-      return 12 # gridシステム col-md-12
-    end
-  end
+  # def check_is_movie(practice)
+  #  # youtubeリンクの有無でGridシステムを変更
+  #   if practice.textbook == "youtube" && practice.youtube_url.present?
+  #     return 3 # gridシステム col-md-5
+  #   else
+  #     return 12 # gridシステム col-md-12
+  #   end
+  # end
 
   private
 
   def practices_params
-    params.require(:practice).permit(:title,:reference_url,:details,:other_text,:body,:is_public,:is_finish,:textbook)
+    params.require(:practice).permit(:title,:reference_url,:details,:other_text,:body,:is_public,:is_finish,:textbook,practice_images_tab_images: [])
   end
 
 

@@ -12,8 +12,11 @@ class PracticesController < ApplicationController
     @practice = Practice.new(practices_params)
     @practice.user_id = current_user.id
     @practice.youtube_url = make_youtube_links #メソッド使用
-    @practice.save
-    redirect_to practice_path(@practice.id)
+    if @practice.save
+      redirect_to practice_path(@practice.id)
+    else
+      render :new
+    end
   end
 
   def show
@@ -30,8 +33,11 @@ class PracticesController < ApplicationController
     @practice = Practice.find(params[:id])
      # youtubeの埋め込みリンク作成
     @practice.youtube_url = make_youtube_links
-    @practice.update(practices_params)
-    redirect_to practice_path(@practice.id)
+    if @practice.update(practices_params)
+      redirect_to practice_path(@practice.id)
+    else
+      render :edit
+    end
   end
 
   def destroy

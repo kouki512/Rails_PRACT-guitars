@@ -5,7 +5,7 @@
 //profile.html.erb
 .profile-wrapper{
   width: 100%;
-  background-color: rgba(137,137,137,0.95);
+  background-color: #4C4540;
   position: relative;
   &:before{
     content: "";
@@ -14,10 +14,12 @@
   }
 }
 .rotate-container{
-  width: 40%;
+  width: 60%;
   height: 100%;
   margin: 0 auto;
-  
+  @media screen and (max-width:767px){
+    width: 80%;
+}
 }
 .card{
   height: auto;
@@ -33,10 +35,10 @@
   text-align: center;
   .card-img-container{
     width:20%;
-    // height: 130px;
     margin: 0 auto;
-     //background-color: #333;
-    // border-radius: 50%;
+    @media screen and (max-width:767px){
+      width: 30%;
+      }
     .card-img{
       object-fit:cover;
       border-radius:50%;
@@ -44,6 +46,10 @@
   }
   .card-title{
     font-size: 30px;
+    @media screen and (max-width:767px){
+      font-size: 26px;
+      
+    }
   }
 }
 

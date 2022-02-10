@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 2022_02_08_092806) do
     t.string "youtube_url"
     t.integer "textbook", default: 0, null: false
     t.string "other_text"
-    t.boolean "is_public", default: false
     t.boolean "is_finish", default: false
     t.integer "user_id"
     t.datetime "created_at", null: false

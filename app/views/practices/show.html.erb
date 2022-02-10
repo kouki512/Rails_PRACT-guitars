@@ -1,7 +1,9 @@
 <div class="container-fluid practice-show ">
   <div class="row">
   <div class="practice-detail-container col-lg-8 col-xl-8">
-
+  <div class="practice-show-title">
+    <h3><span><%= @practice.title %></span></h2>
+  </div>
     <% if  @practice.youtube_url.present? %>
     <div class="aaa">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @practice.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -60,24 +62,14 @@
           <h5 class ="practice-contents-title">教材</h5>
           <%= @practice.textbook_i18n %>
         </div>
-        <div class="practice-option" >
-          <div class="practice-step">
-          <h5>練習状況</h5>
+        <div class="practice-contents" >
+          <h5 class ="practice-contents-title">練習状況</h5>
           <% if @practice.is_finish == false %>
               練習中
             <% else %>
               練習完了！
             <% end %>
-          
-          </div>
-          <div class="">
-          <h5 >公開設定</h5>
-          <% if @practice.is_public == false %>
-              プライベート
-          <% else %>
-              公開中
-          <% end %>
-        </div>
+  
         </div>
       </div>
     

@@ -45,8 +45,8 @@ html, body {
   margin-left: 20px;
 }
 body{
-  background-color: #f7f4ed;
-  font-family:'Sawarabi Mincho', "ヒラギノ角ゴ", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  background-color: #FFF5DD;
+  font-family:'Noto Sans JP', "ヒラギノ角ゴ", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
   display: flex;
 flex-flow: column;
 min-height: 100vh;
@@ -144,7 +144,7 @@ iframe{
   height: 100px;
   margin-top: 50px;
   display: table;
-  background-color: #397B90;
+  background-color: #CCCDD0;
   .copyright{
     display: table-cell;      //tdタグのような表示
     vertical-align: middle; 

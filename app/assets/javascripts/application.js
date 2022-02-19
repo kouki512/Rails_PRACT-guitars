@@ -33,4 +33,13 @@ document.addEventListener("turbolinks:load", function() {
       $('#card-back').hide('slow');
     });
   });
-})
+  
+  $(function(){
+     $('.scroll-button').click(function(){
+      $(this).toggleClass('scroll-on');
+    });
+    $('.scroll-button').click(function(){
+    scrollPage()
+    });
+  });
+});

@@ -30,11 +30,15 @@
             <ul class = "navbar-nav ml-auto">
             <% if user_signed_in? %>
                 <li class="nav-item">
-                  <%= link_to "練習記録", user_path(current_user),class:"gene-btn header-link font-color" %>
+                  <%= link_to "マイページ", user_path(current_user),class:"gene-btn header-link font-color" %>
                 </li>
                 <li class="nav-item">
-                  <%= link_to "みんなの練習を見る", practices_path,class:"gene-btn header-link font-color" %>
+                  <%= link_to "練習メニューを見る", practices_path,class:"gene-btn header-link font-color" %>
                 </li>
+                <li class="nav-item">
+                  <%= link_to "新規作成", new_practice_path,class:"gene-btn header-link font-color" %>
+                </li>
+
                 <li class="nav-item">
                   <%= link_to "ログアウト", destroy_user_session_path, method: :delete,class:"gene-btn header-link font-color" %>
                 </li>
@@ -54,5 +58,8 @@
     <main class="main">
       <%= yield %>
     </main>
+    <footer class="footer">
+      <p class="copyright">Copyright © k_uki All Rights Reserved.</p>
+    </footer>
   </body>
 </html>

@@ -1,30 +1,45 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="new-practice">
+
+  <div class="content-new-title"><h2>練習メニューを登録</h2></div>
+<% if @practice.errors.any? %>
+    <ul>
+      <li>
+        <p style="color:red; font-weight:bold;">タイトルが入力されておりません。</p>
+      </li>
+    </ul>
+  <% end %>
       <%= form_with model:@practice, local:true do |f| %>
         <table>
           <tbody>
+              <tr>
+                  <td><%= f.label "タイトル" %><span >※<span></td>
+                  <td> <%= f.text_field :title,class: "form-control mb-2" %></td>
+              </tr>
               <tr>
                   <td><%= f.label "使用教材" %></td>
                   <td><%= f.select :textbook, Practice.textbooks_i18n.invert ,{include_blank: '選択ボックス'},class:"mb-2" %></td>
               </tr>
               <!-- Jquery使用 -->
-              <tr>
+              <!--<tr>
                 <td><%= f.label "その他の教材" %></td>
                 <td><%= f.text_field :other_text,class: "form-control mb-2" %></td>
-              </tr>
+              </tr> -->
               <!-- *** -->
               <tr>
                 <td><%= f.label "教材のリンク" %></td>
                 <td><%= f.text_field :reference_url,class: "form-control mb-2" %></td>
               </tr>
+
               <tr>
-                  <td><%= f.label "練習内容" %></td>
-                  <td> <%= f.text_field :title,class: "form-control mb-2" %></td>
+                <td><%= f.label "Tab譜の画像" %></td>
+                <td><%= f.attachment_field :practice_images_tab_images, multiple: true,class: "form-control mb-2" %></td>
               </tr>
+
               
               <tr>
-                  <td><%= f.label "詳細な練習内容" %></td>
+                  <td><%= f.label "練習内容" %></td>
                   <td><%= f.text_area :details,class: "form-control mb-2" %></td>
               </tr>
               <tr>
@@ -39,13 +54,7 @@
                       <%= f.label "練習完了！", class:"mr-1"%><%= f.radio_button :is_finish, :true %>
                   </td> 
               </tr>
-              <tr>
-                  <td><%= f.label "公開設定" %></td>
-                  <td>
-                      <%= f.label "公開", class:"mr-1"%><%= f.radio_button :is_public, :true %>
-                      <%= f.label "プライベート", class:"mr-1" %> <%= f.radio_button :is_public, :false %>
-                  </td> 
-              </tr>
+              
                   <div class="submit-btn">
                     <td><%= f.submit "新規登録",class:"new-create-btn" %> </td> 
                   </div>

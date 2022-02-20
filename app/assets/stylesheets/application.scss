@@ -27,7 +27,7 @@ html, body {
   margin: 0;
   padding: 0;
 }
- 
+
 .gene-btn{
   text-decoration: none;
 }
@@ -35,6 +35,19 @@ html, body {
   text-decoration: none;
   opacity:0.5;
 }
+// infomationボタン（new,edit.html）
+.info-menu{
+  display: inline;
+  padding: 10px;
+}
+#info-content{
+  display: none;
+  background-color: #dcdcdc;
+  padding: 15px;
+  border-radius: 10px;
+}
+//
+
 .header{
   background-color: #fff;
 }

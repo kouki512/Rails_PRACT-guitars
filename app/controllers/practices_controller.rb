@@ -22,11 +22,18 @@ class PracticesController < ApplicationController
   def show
     @practice = Practice.find(params[:id])
     @user = @practice.user
+    unless @practice.user_id == current_user.id
+      redirect_to practices_path
+    end
     #@ratio = check_is_movie(@practice) #メソッド使用
   end
 
   def edit
     @practice = Practice.find(params[:id])
+    @user = @practice.user
+    unless @practice.user_id == current_user.id
+      redirect_to practices_path
+    end
   end
 
   def update

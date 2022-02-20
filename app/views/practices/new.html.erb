@@ -28,12 +28,27 @@
               </tr> -->
               <!-- *** -->
               <tr>
-                <td><%= f.label "教材のリンク" %></td>
+                <td><%= f.label "教材のリンク" %>
+                <div class="info-menu">
+                  <i class="fas fa-info-circle info-triger"></i>
+                  <div id="info-content">
+                    <p>・練習するボタンの遷移先になります。<br>※youtubeリンクを投稿した場合、動画の画面が表示されます。</p>
+                  </div>
+                </div>
+                </td>
+                <td></td>
                 <td><%= f.text_field :reference_url,class: "form-control mb-2" %></td>
               </tr>
 
               <tr>
-                <td><%= f.label "Tab譜の画像" %></td>
+                <td><%= f.label "Tab譜の画像" %>
+                <div class="info-menu">
+                  <i class="fas fa-info-circle info-triger"></i>
+                  <div id="info-content">
+                    <p>・選択した画像がメニューに追加されます。<br>※ 画像は複数枚追加可能です。</p>
+                  </div>
+                </div>
+                </td>
                 <td><%= f.attachment_field :practice_images_tab_images, multiple: true,class: "form-control mb-2" %></td>
               </tr>
 
@@ -61,6 +76,7 @@
           </tbody>
       </table>
       <% end %>
+       	
     </div>
   </div>
 </div>

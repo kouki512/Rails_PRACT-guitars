@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -21,7 +21,7 @@
         <div class="container">
 
          <div class="header-btn">
-         <%= link_to root_path, class:"gene-btn" do %><h3 class = "gene-btn header-logo nav-link font-color">LoveGuitars..</h3><% end %>
+         <%= link_to root_path, class:"header-btn gene-btn-hover" do %><h3 class = "header-btn  header-logo nav-link font-color">LoveGuitars..</h3><% end %>
          </div>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,24 +32,24 @@
             <ul class = "navbar-nav ml-auto">
             <% if user_signed_in? %>
                 <li class="nav-item">
-                  <%= link_to "マイページ", user_mypage_path,class:"gene-btn header-link font-color" %>
+                  <%= link_to "マイページ", user_mypage_path,class:"header-btn  gene-btn-hover header-link font-color" %>
                 </li>
                 <li class="nav-item">
-                  <%= link_to "練習メニューを見る", practices_path,class:"gene-btn header-link font-color" %>
+                  <%= link_to "練習メニューを見る", practices_path,class:"header-btn gene-btn-hover header-link font-color" %>
                 </li>
                 <li class="nav-item">
-                  <%= link_to "新規作成", new_practice_path,class:"gene-btn header-link font-color" %>
+                  <%= link_to "新規作成", new_practice_path,class:"header-btn gene-btn-hover header-link font-color" %>
                 </li>
 
                 <li class="nav-item">
-                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete,class:"gene-btn header-link font-color" %>
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete,class:"header-btn gene-btn-hover header-link font-color" %>
                 </li>
             <% else %>
                 <li class="nav-item">
-                  <%= link_to "新規登録 ",new_user_registration_path ,class:"gene-btn font-color header-link"%>
+                  <%= link_to "新規登録 ",new_user_registration_path ,class:"header-btn gene-btn-hover font-color header-link"%>
                 </li>
                 <li class="nav-item">
-                  <%= link_to "ログイン", new_user_session_path,class:" gene-btn  font-color header-link" %>
+                  <%= link_to "ログイン", new_user_session_path,class:" header-btn gene-btn-hover  font-color header-link" %>
                 </li>
             <% end %>
             </ul>

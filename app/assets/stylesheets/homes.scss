@@ -8,7 +8,7 @@
 }
 .main-visual-left{
   width: 50%;
-  background-color: #FFF5DD;
+  background-color: #F4DFBB;
 }
 .main-visual-right{
   width: 50%;
@@ -33,16 +33,73 @@
 .main-visual-subtitle{
   margin-top: 15px;
   p{
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: 600;
   }
 }
 .main-visual-right{
   color: #fff;
+  
+}
+.main-visual-contents{
+position: relative;
 }
 .visual-right-img{
   width: 100%;
  text-align: center;
 }
+.visual-right-text{
+  position: absolute;
+  top: 12%;
+  right: 6vw;
+  font-size: 30px;
+  font-weight: bold;
+}
 .visual-img{
   width: 100%;
+}
+.visual-sign{
+  margin-top: 15px;
+  color: #fff;
+  text-align: center;
+}
+
+.mainvisual-sign_up-btn {
+  background-color: #397B90;
+  color: #fff;
+  display: inline-block;
+  font-size: 18px;
+  padding: 0 1.5em;
+  text-align: center;
+  text-decoration: none;
+  line-height: 54px;
+  outline: none;
+  &:hover{
+    text-decoration: none;
+    background-color: #CCCDD0;
+  }
+}
+.mainvisual-sign_up-btn::before,
+.mainvisual-sign_up-btn::after {
+  position: absolute;
+  z-index: -1;
+  display: block;
+  content: '';
+}
+.mainvisual-sign_up-btn,
+.mainvisual-sign_up-btn::before,
+.mainvisual-sign_up-btn::after {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+.visual-sign_in{
+  font-size: 12px;
+  margin-top: 10px;
+  p{
+    margin-bottom: 0;
+  }
+  a{
+    color: #fff;
+    border-bottom: 1px solid #fff;
+  }
 }

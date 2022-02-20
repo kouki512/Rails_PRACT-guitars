@@ -10,16 +10,27 @@
             <h1>LoveGuitars..</h1>
           </div>
           <div class="main-visual-subtitle">
-            <p>サブタイトル</p>
+            <p>動画,楽譜,書籍...<br>練習メニューを一つに</p>
           </div>
         </div>
       </div>
       <div class="main-visual-right">
-        <div class="visual-right-text">
-          <p>テキストテキストテキスト<br>テキストテキストテキスト</p>
-        </div>
-        <div class="visual-right-img">
-          <%= image_tag 'main-visual.jpg',class:"visual-img" %>
+        <div class="main-visual-contents">
+          <div class="visual-right-text">
+            <p>今までの練習内容<br>覚えていますか？</p>
+          </div>
+          <div class="visual-right-img">
+            <%= image_tag 'main-visual.png',class:"visual-img" %>
+          </div>
+          <div class="visual-sign">
+            <div class="visual-sign_up">
+              <%= link_to "さっそく使ってみる", new_user_registration_path, class:"mainvisual-sign_up-btn" %>
+            </div>
+            <div class="visual-sign_in ">
+              <p>ログインの方は<br></p><%= link_to "こちら" ,new_user_session_path,class:"gene-btn-hover" %>
+            </div>
+          </div>
+        
         </div>
       </div>
     </div>

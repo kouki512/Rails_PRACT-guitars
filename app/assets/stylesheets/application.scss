@@ -27,14 +27,22 @@ html, body {
   margin: 0;
   padding: 0;
 }
-
-.gene-btn{
+.header-btn{
   text-decoration: none;
 }
-.gene-btn:hover{
+.gene-btn-hover:hover{
   text-decoration: none;
   opacity:0.5;
 }
+.gene-btn{
+  display: inline-block;
+  font-size: 32px;
+  margin-bottom: 20px;
+  padding: 7px 30px;
+  border-radius:100vh;
+  text-decoration: none;
+}
+
 // infomationボタン（new,edit.html）
 .info-menu{
   display: inline;

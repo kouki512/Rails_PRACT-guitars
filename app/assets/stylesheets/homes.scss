@@ -6,12 +6,18 @@
   min-height: calc(100vh - 73px);
   display: flex;
 }
-.main-visual-left{
+.top-contents-left{
   width: 50%;
+}
+.main-visual-left{
+  padding-top: 3em;
   background-color: #F4DFBB;
 }
-.main-visual-right{
+.top-contents-right{
   width: 50%;
+}
+.main-visual-right{
+  padding-top: 3em;
   background-color: #4c4540;
 }
 .main-visual-logo{
@@ -38,7 +44,7 @@
   }
 }
 .main-visual-right{
-  color: #fff;
+  color: #f5f5f5;
   
 }
 .main-visual-contents{
@@ -60,13 +66,13 @@ position: relative;
 }
 .visual-sign{
   margin-top: 15px;
-  color: #fff;
+  color: #f5f5f5;
   text-align: center;
 }
 
 .mainvisual-sign_up-btn {
   background-color: #397B90;
-  color: #fff;
+  color: #f5f5f5;
   display: inline-block;
   font-size: 18px;
   padding: 0 1.5em;
@@ -99,7 +105,83 @@ position: relative;
     margin-bottom: 0;
   }
   a{
-    color: #fff;
-    border-bottom: 1px solid #fff;
+    color: #f5f5f5;
+    border-bottom: 1px solid #f5f5f5;
   }
+}
+.top-contents{
+
+}
+.top-about{
+  color: #f5f5f5;
+}
+.top-content{
+  display: flex;
+  margin: 0 auto;
+}
+.top-about-left{
+  background-color: #4c4540;
+  padding: 3em;
+  padding-right: 0;
+}
+  .top-contents-title{
+    font-weight: bold;
+    margin-left: 2.5em;
+  }
+  .contents-main-title{
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  .contents-subtitle{
+    font-size: 22px;
+  }
+  .about-message{
+    font-weight: bold;
+    font-size: 24px;
+  }
+.top-about-lists{
+  margin: 1.5em 0;
+  .top-about-list{
+    font-weight: bold;
+    margin-bottom: 1.5em;
+    font-size: 18px;
+  }
+}
+.about-list{
+  display: flex;
+}
+
+.top-about-right{
+
+  text-align: center;
+      .about-example-img{
+        width: 40%;
+        border: 2px solid #4c4540;
+      }
+      .about-img{
+        width: 30%;
+      }
+}
+
+.about-image-container{
+  margin-bottom: 20px;
+}
+
+.top-introduction{
+  color: #f5f5f5;
+}
+.top-introduction-left{
+  text-align: center;
+}
+.introduction-image{
+  margin-top: 20px;
+}
+.introduction-example-img{
+  width: 50%;
+  border: 2px solid #4c4540;
+}
+.top-introduction-right{
+  background-color: #4c4540;
+  padding: 3em;
+  padding-right: 0;
 }

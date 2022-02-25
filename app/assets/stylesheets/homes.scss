@@ -31,6 +31,14 @@
     padding-top: 1.5em;
   }
 }
+.top-pract-logo{
+  @media screen and (max-width:1024px){
+    width: 200px;
+  }
+  @media screen and (max-width:599px){
+    width: 150px;
+  }
+}
 .main-visual-right{
   padding-top: 3em;
   background-color: #4c4540;
@@ -155,7 +163,9 @@ position: relative;
     border-bottom: 1px solid #f5f5f5;
   }
 }
-
+.top-contents{
+  background-color: #FFF5DD;
+}
 .top-about{
   color: #f5f5f5;
   @media screen and (max-width:1024px){ 

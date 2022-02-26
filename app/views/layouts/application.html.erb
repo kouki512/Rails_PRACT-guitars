@@ -46,8 +46,7 @@
                 </li>
             <% else %>
                 <li class="nav-item">
-                  <%#= link_to "新規登録 ",new_user_registration_path ,class:"header-btn gene-btn-hover font-color header-link"%>
-                  <a class="header-btn gene-btn-hover font-color header-link" href="/users/sign_up">新規登録</a>
+                  <%= link_to "新規登録 ",new_user_registration_path ,class:"header-btn gene-btn-hover font-color header-link"%>
                 </li>
                 <li class="nav-item">
                   <%= link_to "ログイン", new_user_session_path,class:" header-btn gene-btn-hover  font-color header-link" %>

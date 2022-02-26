@@ -1,16 +1,24 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="new-practice edit-practice">
+    <div class="content-new-title"><h2>ユーザー情報を編集</h2></div>
+    <% if @user.errors.any? %>
+      <ul>
+        <li>
+          <p style="color:red; font-weight:bold;">ユーザーネームが入力されておりません。</p>
+        </li>
+      </ul>
+    <% end %>
       <%= form_with model:@user, local:true do |f| %>
         <table>
           <tbody>
               <tr>
-                  <td><%= f.label "プロフィール画像" %></td>
-                  <td><%= f.attachment_field :profile_image %></td>
+                  <td><%= f.label "ユーザ名" %><span>※<span></td>
+                  <td><%= f.text_field :name %></td>
               </tr>
               <tr>
-                  <td><%= f.label "ユーザ名" %></td>
-                  <td><%= f.text_field :name %></td>
+                  <td><%= f.label "プロフィール画像" %></td>
+                  <td><%= f.attachment_field :profile_image %></td>
               </tr>
               <tr>
                   <td><%= f.label "自己紹介" %></td>

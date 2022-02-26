@@ -16,15 +16,62 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
-.gene-btn{
+
+ 
+* {
+  box-sizing: border-box;
+}
+ 
+html, body {
+  //height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.header-btn{
+  width: 200px;
   text-decoration: none;
 }
-.gene-btn:hover{
+
+.gene-btn-hover:hover{
   text-decoration: none;
   opacity:0.5;
 }
+.gene-btn{
+  display: inline-block;
+  font-size: 32px;
+  margin-bottom: 20px;
+  padding: 7px 30px;
+  border-radius:100vh;
+  text-decoration: none;
+}
+
+// infomationボタン（new,edit.html）
+.info-menu{
+  display: inline;
+  padding: 10px;
+}
+#info-content{
+  display: none;
+  background-color: #dcdcdc;
+  padding: 15px;
+  border-radius: 10px;
+}
+//
+
 .header{
   background-color: #fff;
+  max-height: 73px;
+}
+.pract-logo{
+  width: 70%;
+}
+.navbar-collapse{
+  padding-bottom: 10px;
+  background-color: #ffffff;
+  z-index: 99;
+}
+.navbar{
+  max-height: 73px;
 }
 .font-color{
   color: #242423;
@@ -33,11 +80,14 @@
   margin-left: 20px;
 }
 body{
-  background-color: #f7f4ed;
-  font-family:'Sawarabi Mincho', "ヒラギノ角ゴ", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  background-color: #F4DFBB;
+  font-family:'Noto Sans JP', "ヒラギノ角ゴ", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  display: flex;
+flex-flow: column;
+min-height: 100vh;
 }
 .main{ 
-  margin: 0 auto;
+  flex: 1;
 }
 .contents{
   max-width: 95%;
@@ -47,4 +97,106 @@ iframe{
   width: 100%;
   height: auto;
   aspect-ratio: 16/9;
+}
+.practice-btn{
+  
+  display: inline-block;
+  font-size: 32px;
+  margin-bottom: 20px;
+  padding: 7px 30px;
+  border-radius:100vh;
+  text-decoration: none;
+  color: #FFF;
+  background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
+  transition: .4s;
+  &:hover{
+    background-image: linear-gradient(45deg, #FFC107 0%, #f76a35 100%);
+  }
+  a{
+    display: block;
+    color: #fff;
+  }
+  .practice-btn-alert{
+    font-size: 14px;
+    color: #333;
+  }
+  @media screen and (max-width:767px){
+    text-align: center;
+    
+  }
+}
+.create-btn{
+  position: fixed;
+  z-index: 999;
+  bottom: 5%;
+  right: 10%;
+  border-radius: 10;
+}
+.content-new-title{
+  
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 20px;
+  &::after{
+      content: "";
+      background: #397B90;
+      width: 76px;
+      height: 3px;
+      position: absolute;
+      bottom: 13%;
+      left: 50%;
+      transform: translateX(-50%);
+  }
+}
+.devise-form-title{
+  margin-top: 30px;
+}
+.devise-form-wrapper{
+  width: 50%;
+  margin: 0 auto;
+}
+.devise-form{
+  text-align: center;
+  .field{
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    @media screen and (max-width:1024px){
+      width: 100%;
+    }
+    .devise-field-title{
+      text-align: left;
+      font-weight: bold;
+    }
+    .devise-input-form{
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+.footer{
+  width: 100%;
+  height: auto;
+  margin-top: 50px;
+  padding-top: 20px;
+  display: table;
+  background-color: #CCCDD0;
+  display: table-cell;      //tdタグのような表示
+  vertical-align: middle; 
+  text-align: center;
+  .copyright{
+    vertical-align: middle; 
+  }
+  .contact{
+    vertical-align: middle; 
+    .contact-text{
+      font-weight: bold;
+    }
+    .contact-title{
+      margin-bottom: 0;
+    }
+  }
 }

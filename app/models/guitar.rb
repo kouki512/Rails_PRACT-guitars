@@ -1,2 +1,0 @@
-class Guitar < ApplicationRecord
-end

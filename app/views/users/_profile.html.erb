@@ -7,7 +7,6 @@
           <%= attachment_image_tag @user,:profile_image,:fill, 130,130,fallback:"no_image.jpg",class:"card-img" %>
         </div>
         <h3 class="card-title"><%= @user.name %></h3>
-        <p class = "tags">Time Traveler</p>
         <button class="btn btn-primary btn-open">Read more &nbsp;
           <i class="fa fa-long-arrow-right"></i>
         </button>
@@ -43,20 +42,9 @@
   <div class="profile-infos-container">
     <div class="profile-infos-index">
       <div class="profile-info pen-num">
-        <h5>pen-num</h5>
-        <p>111</p>
+        <h5>投稿数</h5>
+        <p><%= practice.count %></p>
       </div>
-      <div class="profile-info follower-num">
-        <h5>follower</h5>
-        <p>111</p>
-      </div>
-      <div class="profile-info following-num">
-        <h5>followings</h5>
-        <p>111</p>
-      </div>
-    </div>
   </div>
-  <div class="profile-follow-btn">
-
   </div>
 </div>

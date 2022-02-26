@@ -1,11 +1,11 @@
     <div class="practice-container">
       <div class="practice-title">
         <div class="user-image">
-            <%= link_to practice.user.name, root_path, class:"user-image-content"%>
+            <%= link_to practice.user.name, user_mypage_path, class:"user-image-content"%>
         </div>
       </div>
 
-      <%= link_to  practice_path(practice.id),class:"practice-title-link gene-btn" do%>
+      <%= link_to  practice_path(practice.id),class:"practice-title-link gene-btn-hover" do%>
      <div class="practice-index-menu">
             <div class="practice-title-contents">
                 <%= practice.title %>
@@ -14,28 +14,13 @@
                 <%= practice.body %>
             </div>
             <div class="practice-textbook">
-                参考教材：
-                <% if practice.textbook == "other" %>
-                  <%= practice.other_text %>
-                <% else %>
+                参考教材：      
                   <%= practice.textbook_i18n %>
-                <% end %>
             </div>
             <div class="practice-more">
               <p>もっと見る</p>
             </div>
       <% end %>
-            <div class="practice-link">
-                <% if practice.reference_url.present? %> <!-- URLが投稿されていた場合 -->
-                  <a href="<%= practice.reference_url %>" target="_blank" rel="noopener noreferrer"class="gene-btn">練習する！
-                  <div class="practice-natural-link"><p>(外部サイトに遷移します。)</p></div>
-                  </a>
-                  
-                <% else %>
-                  リンクが投稿されていません
-                <% end %>
-                
-            </div>
             
       </div>
    </div> 

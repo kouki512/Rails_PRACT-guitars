@@ -19,18 +19,35 @@
 //= require turbolinks
 //= require_tree .
 
-//user_show
-
-
+//user_show プロフィール画面の表示
 document.addEventListener("turbolinks:load", function() {
   $(function(){
     $('#card-back').hide();
     $('.btn-open').on('click',()=>{
       $('#card-back').show('slow');
     });
-  
     $('.btn-close').on('click',()=>{
       $('#card-back').hide('slow');
     });
   });
-})
+
+  // practice/show画像のスクロール
+  $(function(){
+     $('.scroll-button').click(function(){
+      $(this).toggleClass('scroll-on');
+    });
+    $('.scroll-button').click(function(){
+    scrollPage()
+    });
+  });
+
+
+  $(function(){
+    $('.info-menu').hover(function(){
+     $(this).children('#info-content').fadeIn('normal');
+   }, 
+   function(){
+    $(this).children('#info-content').fadeOut('fast');
+  });
+ });
+});

@@ -1,21 +1,16 @@
 <div class="container-fluid">
     <div class="practice-index-wrapper contents">
-  <div class="row">
+  <div class="row-fluid">
         <div class="content-title">
-          <h1>みんなの練習記録</h1>
-          <%= link_to "新しく記録する", new_practice_path,class:" practice-btn create-btn" %>
+          <h1>練習記録</h1>
+         <%= render 'layouts/create_btn' %>
         </div>
       <div class="practice-main-contents col-lg-10">
         <div class="practice-index">
-            <% @practices.each do |practice|  %>  
-              <% if practice.is_public == true %>    
+            <% @practices.each do |practice|  %>   
                     <%= render 'practices/index', practice: practice %>
-              <% end %>
             <% end %>
         </div>
-      </div>
-      <div class="col-lg-2">
-        <%= render "practices/search" %>
       </div>
       </div>
     </div>

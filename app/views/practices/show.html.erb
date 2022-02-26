@@ -1,52 +1,30 @@
-<div class="container-fluid practice-show">
+<div class="container-fluid practice-show ">
   <div class="row">
-  <div class="practice-detail-container col-lg-9 col-xl-9">
-    
-    <% if @practice.textbook == "youtube" && @practice.youtube_url.present? %>
+  <div class="practice-detail-container col-lg-8 col-xl-8">
+  <div class="practice-show-title">
+    <h3><span><%= @practice.title %></span></h2>
+  </div>
+    <% if  @practice.youtube_url.present? %>
     <div class="aaa">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @practice.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <% end %>
-    <!--youtubeの動画が存在していたら専用のレイアウトに変更 -->
-    <div class="practice-menu">
-        <div class="practice-contents ">
-          <h5 class ="practice-contents-title ">練習内容</h5>
-          <%= @practice.title %>
-        </div>
-        <div class="practice-contents">
-          <h5 class ="practice-contents-title">練習詳細</h5>
-          <%= @practice.details %>
-        </div>
-        <div class="practice-contents">
-          <h5 class ="practice-contents-title">練習メモ</h5>
-          <%= @practice.body %>
-        </div>
-        <div class="practice-contents">
-          <h5 class ="practice-contents-title">教材</h5>
-          <%= @practice.textbook_i18n %>
-        </div>
-        <div class="practice-option" >
-          <div class="practice-step">
-          <h5>練習状況</h5>
-          <% if @practice.is_finish == false %>
-              練習中
-            <% else %>
-              練習完了！
-            <% end %>
-          
-          </div>
-          <div class="">
-          <h5 >公開設定</h5>
-          <% if @practice.is_public == false %>
-              プライベート
-          <% else %>
-              公開中
-          <% end %>
-        </div>
-        </div>
+    <% if @practice.practice_images.present? %>
+    <div class="practice-tab-container ">
+      <div class="speed-select">
+        <p>スクロール速度：</p>
+        <%= select_tag "speed",options_for_select((1..50).to_a,:selected => 20 ) %>
       </div>
-  </div>
-    <div class="col-lg-3 col-xl-3 practice-content-others">
+      <div class="scroll-button"> 
+        
+          <% @practice.practice_images.each do |tab_image| %>
+            <%= attachment_image_tag tab_image,:tab_image,class:"" %>
+          <% end %>
+        
+      </div>
+    </div>
+    <% end %>
+    <div class=" practice-content-others">
       <div class="practice-content-other"> 
           <div class="practice-referenece">
               <% if @practice.reference_url.present? %> <!-- URLが投稿されていた場合 -->
@@ -66,6 +44,45 @@
           </div>
       </div>
     </div>
+    <!--youtubeの動画が存在していたら専用のレイアウトに変更 -->
+    <div class="practice-menu">
+        <div class="practice-contents ">
+          <h5 class ="practice-contents-title ">練習内容</h5>
+          <%= @practice.title %>
+        </div>
+        <div class="practice-contents">
+          <h5 class ="practice-contents-title">練習詳細</h5>
+          <%= @practice.details %>
+        </div>
+        <div class="practice-contents">
+          <h5 class ="practice-contents-title">練習メモ</h5>
+          <%= @practice.body %>
+        </div>
+        <div class="practice-contents">
+          <h5 class ="practice-contents-title">教材</h5>
+          <%= @practice.textbook_i18n %>
+        </div>
+        <div class="practice-contents" >
+          <h5 class ="practice-contents-title">練習状況</h5>
+          <% if @practice.is_finish == false %>
+              練習中
+            <% else %>
+              練習完了！
+            <% end %>
+  
+        </div>
+      </div>
+    
+  </div>
   </div>
 </div>
+<script>
 
+function scrollPage() {
+  var speed = document.getElementById("speed").value;// プルダウンに指定されているspeedミリ秒ごとに発火
+  if($('div').hasClass('scroll-on')){//scroll-onのクラスが存在する場合（application.jsに記載有）
+    window.scrollBy(0,1);//1pxずつ下にずれる
+    setTimeout("scrollPage()",speed);
+  }
+}
+</script>

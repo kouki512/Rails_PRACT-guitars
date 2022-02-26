@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def show 
-    @user = User.find(params[:id])
+    @user = current_user
     @practices = @user.practices
   end
 
@@ -10,8 +10,11 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.update(user_params)
-    redirect_to user_path(@user)
+    if @user.update(user_params)
+      redirect_to user_mypage_path
+    else
+      render :edit
+    end
   end
 
   private

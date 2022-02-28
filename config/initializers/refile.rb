@@ -1,9 +1,9 @@
 require "refile/s3"
 
 aws = {
-  access_key_id: ENV['AKIAWRSUNCEYKBTDAX5I
+  access_key_id: ENV['AKIAWRSUNCEYB6WECPFD
   '],
-  secret_access_key: ENV['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
+  secret_access_key: ENV['wP9S1OcJR96VxrQzFynmS/yUcxHZSmBnaogFXtQZ
   '],
   region: "ap-northeast-1",
   bucket: "pract-guitars",

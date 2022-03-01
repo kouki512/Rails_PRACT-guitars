@@ -5,3 +5,5 @@ require "refile/s3"
     region: 'ap-northeast-1', # リージョン
     bucket: 'pract-guitars', # バケット名
   }
+Refile.cache = Refile::S3.new(prefix: "cache", **aws)
+Refile.store = Refile::S3.new(prefix: "store", **aws)

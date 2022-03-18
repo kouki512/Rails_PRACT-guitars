@@ -92,10 +92,22 @@ min-height: 100vh;
   max-width: 95%;
   margin: 0 auto;
 }
+.iframe-container{
+  width: 60%;
+  height: auto;
+  margin: 0 auto;
+  @media screen and (max-width:1024px){
+    width: 100%;
+    display: block;
+  }
+}
 iframe{
   width: 100%;
   height: auto;
   aspect-ratio: 16/9;
+  @media screen and (max-width:1024px){ 
+    display: block;
+  }
 }
 .practice-btn{
   

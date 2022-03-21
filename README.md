@@ -4,6 +4,9 @@ This README would normally document whatever steps are necessary to get the
 application up and running.
 
 Things you may want to cover:
+## パッチノートver1.2.0
+- 練習詳細画面のレイアウトを変更
+  - デスクトップ表示時の、動画の画面サイズを変更
 ## パッチノートver1.1.0
 - 投稿した画像が消えてしまう問題を修正
   - aws s3に画像を保存

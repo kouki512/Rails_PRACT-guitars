@@ -1,0 +1,6 @@
+<% @post_movies.each do |post_movie|  %>   
+    <% link_to post_movie_path(post_movie.id) do %> 
+    <%= post_movie.title %>
+    <%= post_movie.body %>
+ <% end %>
+<% end %>

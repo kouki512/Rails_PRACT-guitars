@@ -1,11 +1,11 @@
     <div class="practice-container">
       <div class="practice-title">
         <div class="user-image">
-            <%= link_to practice.user.name, root_path, class:"user-image-content"%>
+            <%= link_to practice.user.name, user_mypage_path, class:"user-image-content"%>
         </div>
       </div>
 
-      <%= link_to  practice_path(practice.id),class:"practice-title-link gene-btn" do%>
+      <%= link_to  practice_path(practice.id),class:"practice-title-link gene-btn-hover" do%>
      <div class="practice-index-menu">
             <div class="practice-title-contents">
                 <%= practice.title %>

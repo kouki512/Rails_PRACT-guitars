@@ -22,11 +22,18 @@ class PracticesController < ApplicationController
   def show
     @practice = Practice.find(params[:id])
     @user = @practice.user
+    unless @practice.user_id == current_user.id
+      redirect_to practices_path
+    end
     #@ratio = check_is_movie(@practice) #メソッド使用
   end
 
   def edit
     @practice = Practice.find(params[:id])
+    @user = @practice.user
+    unless @practice.user_id == current_user.id
+      redirect_to practices_path
+    end
   end
 
   def update
@@ -50,7 +57,7 @@ class PracticesController < ApplicationController
   def make_youtube_links
     # youtubeの埋め込みリンク作成
     youtube_initial_url = params[:practice][:reference_url]
-    if youtube_initial_url.include?("https://www.youtube.com/")
+    if youtube_initial_url.include?("youtu")
       url = params[:practice][:reference_url]
       url = url.last(11)
       return url

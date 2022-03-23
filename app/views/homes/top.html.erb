@@ -1,5 +1,83 @@
-<h1>今練習しているサイトを管理するアプリです。</h1>
-<div class="sign_up">
-  <%= link_to "新規登録",new_user_registration_path %>
-  <%= link_to "ログイン",new_user_session_path %>
+<div class="top-container">
+  <div class="top-wrapper">
+    <div class="main-visual">
+      <div class="main-visual-left top-contents-left">
+        <div class="main-visual-logo">
+          <%= image_tag 'logo.png', class:"image-logo" %>
+        </div>
+        <div class="main-visual-title-wrapper">
+          <div class="main-visual-title">
+            <h1><%= image_tag 'PRACT-rogo.png', class:"top-pract-logo" %></h1>
+          </div>
+          <div class="main-visual-subtitle">
+            <p>動画,楽譜,書籍...<br>練習メニューを一つに</p>
+          </div>
+        </div>
+      </div>
+      <div class="main-visual-right top-contents-right">
+        <div class="main-visual-contents">
+          <div class="visual-right-text">
+            <p>今までの練習内容<br>覚えていますか？</p>
+          </div>
+          <div class="visual-right-img">
+            <%= image_tag 'main-visual.png',class:"visual-img" %>
+          </div>
+          <div class="visual-sign">
+            <div class="visual-sign_up">
+              <%= link_to "さっそく使ってみる", new_user_registration_path, class:"mainvisual-sign_up-btn" %>
+            </div>
+            <div class="visual-sign_in ">
+              <p>ログインの方は<br></p><%= link_to "こちら" ,new_user_session_path,class:"gene-btn-hover" %>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+    <div class="top-contents">
+      <div class="top-about top-content">
+        <div class="top-about-left top-contents-left ">
+          <div class="top-contents-title">
+            <h2 class="contents-main-title">日常の練習を更にやりやすく。</h2>
+            <h5 class="contents-subtitle">例えば、こんなことありませんか？</h5>
+            
+            <ul class="top-about-lists">
+              <li class="top-about-list">動画で練習してたけど、何の練習してたっけ？</li>
+              <li class="top-about-list">お気に入りに保存していたが存在を忘れてしまう..</li>
+              <li class="top-about-list">オンライン, オフライン、練習媒体がばらけている..</li>
+            </ul>
+            <h5 class="about-subtitle about-message">必要な練習を必要なときにできるようになります。</h5>
+          </div>
+        </div>
+        <div class="top-about-right top-contents-right">
+          <div class="about-image-irast-container">
+          <%= image_tag 'top-about-remake.png',class:"about-img" %>
+          </div>
+          <div class="about-image-container">
+          <%= image_tag 'about-example.png',class:"about-example-img" %>
+          </div>
+        </div>
+      </div>
+      <div class="top-introduction top-content">
+        <div class="top-introduction-left top-contents-left">
+          <div class="introduction-image">
+            <%= image_tag 'introduction-img.png',class:"introduction-example-img" %>
+          </div>
+          <div class="introduction-image-container">
+          
+          </div>
+        </div>
+        <div class="top-introduction-right top-contents-right">
+          <div class="top-contents-title">
+            <h2 class="introduction-main-title">様々な媒体の練習メニューを一つに。</h2>
+            <h5 class="introduction-subtitle">動画練習もアプリ内で。</h5>
+            <h5 class="introduction-subtitle">楽譜も自動スクロール。紙をめくる必要はありません。</h5>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
 </div>
+

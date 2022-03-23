@@ -89,29 +89,27 @@
   font-size: 14px;
   text-align: right;
 }
-// .practice-link{
-//   text-align: center;
-//   border-top: 1px solid #eee;
-//   padding-top: 10px;
-// }
-// .practice-link a{
-//   font-size: 20px;
-//   text-decoration: none;
-//   color: #0bd;
-//   display: block;
-// }
+
 .practice-natural-link{
   font-size: 12px;
   color: #333;
 }
 // ***
 // show.html.erb
+.practice-fixed-area{
+  //position: fixed;
+}
 .practice-show-title{
   padding: 0.5rem 2rem;
   border-left: 4px solid #4C4540;
   margin: 20px;
   background-color: #f4f4f4;
   font-weight: bold;
+  @media screen and (max-width:599px){
+    span{
+      font-size: 22px;
+    }
+  }
 }
 .practice-detail-container{
   margin-top: 50px;
@@ -192,8 +190,6 @@
 .practice-step{
   margin-right: 20px;
 }
-
-
 .genre-search{
   border-left: 1px solid #4C4540;
   padding-left: 10px;
@@ -203,9 +199,7 @@
 
 // new.html.erb
 .new-practice{
-  
   margin: 30px 0;
-  
   td{
     display: block;
   }
@@ -220,6 +214,11 @@
   text-align: center;
   padding: 10px 20px;
 }
-
+.practice-referenece{
+  .practice-btn{
+    font-size: 26px;
+    padding: 5px 22px;
+  }
+}
 
 //***

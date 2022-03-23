@@ -1,14 +1,18 @@
 <div class="container-fluid practice-show ">
   <div class="row">
   <div class="practice-detail-container col-lg-8 col-xl-8">
-  <div class="practice-show-title">
-    <h3><span><%= @practice.title %></span></h2>
-  </div>
-    <% if  @practice.youtube_url.present? %>
-    <div class="aaa">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @practice.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <div class="practice-fixed-area">
+    <div class="practice-show-title">
+      <h3><span><%= @practice.title %></span></h2>
     </div>
-    <% end %>
+      <% if  @practice.youtube_url.present? %>
+      <div class="aaa">
+        <div class="iframe-container">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @practice.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+      <% end %>
+  </div>
     <% if @practice.practice_images.present? %>
     <div class="practice-tab-container ">
       <div class="speed-select">
@@ -77,9 +81,10 @@
   </div>
 </div>
 <script>
+
 function scrollPage() {
-  var speed = document.getElementById("speed").value;// speedミリ秒ごとに発火
-  if($('div').hasClass('scroll-on')){
+  var speed = document.getElementById("speed").value;// プルダウンに指定されているspeedミリ秒ごとに発火
+  if($('div').hasClass('scroll-on')){//scroll-onのクラスが存在する場合（application.jsに記載有）
     window.scrollBy(0,1);//1pxずつ下にずれる
     setTimeout("scrollPage()",speed);
   }

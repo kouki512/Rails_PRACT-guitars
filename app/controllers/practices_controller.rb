@@ -25,7 +25,6 @@ class PracticesController < ApplicationController
     unless @practice.user_id == current_user.id
       redirect_to practices_path
     end
-    #@ratio = check_is_movie(@practice) #メソッド使用
   end
 
   def edit

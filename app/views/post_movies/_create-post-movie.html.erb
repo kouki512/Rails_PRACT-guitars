@@ -1,0 +1,20 @@
+
+      <%= form_with model:post_movie, local:true do |f| %>
+        <table>
+          <tbody>
+              <tr>
+                  <td><%= f.label "youtubeリンク" %><span >※<span></td>
+                  <td> <%= f.text_field :youtube_url ,class: "form-control mb-2" %></td>
+                  <td><%= f.label "タイトル" %><span >※<span></td>
+                  <td> <%= f.text_field :title,class: "form-control mb-2" %></td>
+                  <td><%= f.label "投稿者コメント" %></td>
+                  <td> <%= f.text_field :body,class: "form-control mb-2" %></td>
+                  <td><%= f.label "パスワード（数字４桁）" %></td>
+                  <td> <%= f.text_field :password,class: "form-control mb-2" %></td>
+                  <td><%= f.submit "新規登録",class:"new-create-btn" %>
+              </tr>
+              
+          </tbody>
+      </table>
+      <% end %>
+   

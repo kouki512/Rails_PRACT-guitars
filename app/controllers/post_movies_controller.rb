@@ -16,14 +16,22 @@ class PostMoviesController < ApplicationController
 
     def show
         @post_movie = PostMovie.find(params[:id])
+        @user = @post_movie.user
     end
 
     def edit
-
+      @post_movie = PostMovie.find(params[:id])
     end
 
     def update
-
+      @post_movie = PostMovie.find(params[:id])
+      @post_movie.youtube_url = make_youtube_links
+      @post_movie.update(
+        title: post_movie_params[:title],
+        body: post_movie_params[:body],
+        password: post_movie_params[:password]
+      )
+      redirect_to post_movie_path(@post_movie.id)
     end
 
     def destroy

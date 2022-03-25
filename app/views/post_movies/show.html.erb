@@ -7,3 +7,9 @@
 <%= @post_movie.title %><br>
 <%= @post_movie.body%><br>
 <%= @post_movie.password %>
+<% if @user == current_user %>
+    <div class="edit-link">
+        <%= link_to "編集する", edit_post_movie_path(@post_movie), class: "btn btn-success" %>
+        <%= link_to "削除する", post_movie_path(@post_movie),method: :delete,class: "btn btn-danger",data: {confirm: "削除しますか？"}  %> 
+    </div>
+<% end %>

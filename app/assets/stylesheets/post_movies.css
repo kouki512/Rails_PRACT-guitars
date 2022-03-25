@@ -1,3 +1,7 @@
+.post_movie-index-link:hover {
+  text-decoration: none;
+}
+
 .post_movie-contents {
   max-width: 95%;
 }

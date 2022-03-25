@@ -39,12 +39,8 @@
             <% else %>
               リンクが投稿されていません
             <% end %>
-              <% if @user == current_user %>
-              <div class="edit-link">
-                  <%= link_to "編集する", edit_practice_path(@practice), class: "btn btn-success" %>
-                  <%= link_to "削除する", practice_path(@practice),method: :delete,class: "btn btn-danger",data: {confirm: "削除しますか？"}  %> 
-              </div>
-              <% end %>
+              
+              <%= render "edit-link" ,user:@user,practice:@practice %>
           </div>
       </div>
     </div>

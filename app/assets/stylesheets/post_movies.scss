@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $post_movie-font-color:#242423;
+.post_movie-index-link:hover{
+    text-decoration: none;
+}
 .post_movie-contents{
     max-width:95%;
     @media screen and (max-width:767px){
@@ -26,6 +29,7 @@ $post_movie-font-color:#242423;
     margin-top: 20px;
     padding: 15px;
     display: flex;
+    
     @media screen and (max-width:767px){
         padding: 5px;
         margin-top: 5px;
@@ -49,6 +53,7 @@ $post_movie-font-color:#242423;
         list-style-type: none;
         margin-top: 15px;
         width: 100%;
+        
         @media screen and (max-width:767px){
             padding-left: 10px;
             margin-top: 5px;

@@ -1,8 +1,11 @@
 <div class="container-fluid post_movie-contents">
     <div class="row">
         <div class="post_movie-index">
+            <div class="content-title">
+                <h1>みんなの投稿</h1>
+            </div>
             <% @post_movies.each do |post_movie|  %> 
-                    <%= link_to post_movie_path(post_movie.id) do%>
+                    <%= link_to post_movie_path(post_movie.id),class:"post_movie-index-link" do%>
                         <div class="post_movies-index-content">
                             <div class="post_movie-img">
                                 <img src="http://img.youtube.com/vi/<%=post_movie.youtube_url%>/mqdefault.jpg" alt="">

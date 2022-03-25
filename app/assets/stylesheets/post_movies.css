@@ -1,0 +1,101 @@
+.post_movie-contents {
+  max-width: 95%;
+}
+
+@media screen and (max-width: 767px) {
+  .post_movie-contents {
+    max-width: 100%;
+  }
+}
+
+.post_movie-index {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 767px) {
+  .post_movie-index {
+    width: 95%;
+    margin-top: 20px;
+  }
+}
+
+.post_movies-index-content {
+  border-top: 1px solid #242423;
+  border-bottom: 1px solid #242423;
+  color: #242423;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 15px;
+  display: flex;
+}
+
+@media screen and (max-width: 767px) {
+  .post_movies-index-content {
+    padding: 5px;
+    margin-top: 5px;
+  }
+}
+
+.post_movies-index-content .post_movie-img {
+  display: flex;
+}
+
+@media screen and (max-width: 1024px) {
+  .post_movies-index-content .post_movie-img {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .post_movies-index-content .post_movie-img {
+    width: 60%;
+  }
+}
+
+.post_movies-index-content .post_movie-img img {
+  max-width: 100%;
+  aspect-ratio: auto 480 / 360;
+  height: auto;
+}
+
+.post_movies-index-content .post_movie-lists {
+  list-style-type: none;
+  margin-top: 15px;
+  width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .post_movies-index-content .post_movie-lists {
+    padding-left: 10px;
+    margin-top: 5px;
+  }
+  .post_movies-index-content .post_movie-lists .post_movie-list-title {
+    font-size: 18px;
+    border-bottom: 1px solid #242423;
+  }
+  .post_movies-index-content .post_movie-lists .post_movie-list-body {
+    margin-top: 12px;
+  }
+}
+
+.post_movies-index-content .post_movie-lists .post_movie-list-title {
+  font-size: 24px;
+  border-bottom: 1px solid #242423;
+}
+
+.post_movies-index-content .post_movie-lists .post_movie-list-body {
+  margin-top: 15px;
+}
+
+@media screen and (max-width: 767px) {
+  .post_movies-index-content .post_movie-lists .post_movie-list-title {
+    font-size: 18px;
+    border-bottom: 1px solid #242423;
+  }
+  .post_movies-index-content .post_movie-lists .post_movie-list-body {
+    margin-top: 12px;
+  }
+}

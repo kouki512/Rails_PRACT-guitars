@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_08_092806) do
+ActiveRecord::Schema.define(version: 2022_03_23_072007) do
 
   create_table "guitars", force: :cascade do |t|
     t.string "name", null: false
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 2022_02_08_092806) do
     t.string "shop_url"
     t.string "youtube_url"
     t.string "guitar_image_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "post_movies", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "youtube_url", null: false
+    t.string "title"
+    t.string "body"
+    t.integer "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -40,6 +50,7 @@ ActiveRecord::Schema.define(version: 2022_02_08_092806) do
     t.string "youtube_url"
     t.integer "textbook", default: 0, null: false
     t.string "other_text"
+    t.boolean "is_public", default: false
     t.boolean "is_finish", default: false
     t.integer "user_id"
     t.datetime "created_at", null: false

@@ -1,6 +1,7 @@
 class PostMoviesController < ApplicationController
     def index
         @post_movies = PostMovie.all
+     
     end
     def new
         @post_movie = PostMovie.new
@@ -38,6 +39,10 @@ class PostMoviesController < ApplicationController
 
     end
 
+    def certification
+      @post_movie = PostMovie.find(params[:id])
+    end
+
     def make_youtube_links
         # youtubeの埋め込みリンク作成
         youtube_initial_url = params[:post_movie][:youtube_url]
@@ -48,7 +53,9 @@ class PostMoviesController < ApplicationController
         else 
           return nil
         end
-      end
+    end
+
+    
 
     private
     def post_movie_params

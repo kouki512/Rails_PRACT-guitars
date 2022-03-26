@@ -58,6 +58,10 @@
                 <li class="nav-item">
                   <%= link_to "ログアウト", destroy_user_session_path, method: :delete,class:"header-btn gene-btn-hover header-link font-color" %>
                 </li>
+            <% elsif admin_signed_in?%>
+                <li class="nav-item">
+                  <%= link_to "管理者ログアウト", destroy_admin_session_path, method: :delete,class:"header-btn gene-btn-hover header-link font-color" %>
+                </li>
             <% else %>
                 <li class="nav-item">
                   <%= link_to "新規登録 ",new_user_registration_path ,class:"header-btn gene-btn-hover font-color header-link"%>

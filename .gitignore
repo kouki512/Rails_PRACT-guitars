@@ -31,3 +31,4 @@
 /config/master.key
 #originにプッシュする時のみ適用
 /.env 
+/db/seeds.rb

@@ -1,7 +1,6 @@
 class PostMoviesController < ApplicationController
     def index
         @post_movies = PostMovie.all
-     
     end
     def new
         @post_movie = PostMovie.new
@@ -17,7 +16,13 @@ class PostMoviesController < ApplicationController
 
     def show
         @post_movie = PostMovie.find(params[:id])
+        unless session[:password_checker] == true
+          if @post_movie.password != nil
+            render :check_password
+          end
+        end
         @user = @post_movie.user
+        session[:password_checker] = false
     end
 
     def edit
@@ -41,6 +46,12 @@ class PostMoviesController < ApplicationController
 
     def certification
       @post_movie = PostMovie.find(params[:id])
+      if @post_movie.password == params[:post_movie][:input_password].to_i
+        session[:password_checker] = true
+        redirect_back(fallback_location: root_path)
+      else 
+        redirect_to post_movies_path
+      end
     end
 
     def make_youtube_links
@@ -59,6 +70,6 @@ class PostMoviesController < ApplicationController
 
     private
     def post_movie_params
-        params.require(:post_movie).permit(:title,:youtube_url,:body,:password)
+        params.require(:post_movie).permit(:title,:youtube_url,:body,:password,:input_password)
       end
 end

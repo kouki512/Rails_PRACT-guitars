@@ -20,6 +20,15 @@ $post_movie-font-color:#242423;
         margin-top: 20px;
     }
 }
+.iframe-post_movie{
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    @media screen and (max-width:1024px){
+        width: 100%;
+        display: block;
+    }    
+}
 .post_movies-index-content{
     border-top: 1px solid $post_movie-font-color;
     border-bottom: 1px solid $post_movie-font-color;
@@ -82,4 +91,21 @@ $post_movie-font-color:#242423;
             }
         }
     }
+}
+
+//show.html
+.post_movie-show{
+    border: 1px solid #000;
+    background-color: #fff;
+    padding: 20px 10px;
+}
+.post_movie-show-title{
+    font-size: 22px;
+    border-bottom: 1px solid #000;
+}
+.post_movie-show-body{
+    font-size: 18px;
+}
+.post_movie_links{
+    text-align: center;
 }

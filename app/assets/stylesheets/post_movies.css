@@ -25,6 +25,19 @@
   }
 }
 
+.iframe-post_movie {
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .iframe-post_movie {
+    width: 100%;
+    display: block;
+  }
+}
+
 .post_movies-index-content {
   border-top: 1px solid #242423;
   border-bottom: 1px solid #242423;
@@ -102,4 +115,23 @@
   .post_movies-index-content .post_movie-lists .post_movie-list-body {
     margin-top: 12px;
   }
+}
+
+.post_movie-show {
+  border: 1px solid #000;
+  background-color: #fff;
+  padding: 20px 10px;
+}
+
+.post_movie-show-title {
+  font-size: 22px;
+  border-bottom: 1px solid #000;
+}
+
+.post_movie-show-body {
+  font-size: 18px;
+}
+
+.post_movie_links {
+  text-align: center;
 }

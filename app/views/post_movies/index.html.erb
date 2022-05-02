@@ -3,6 +3,7 @@
         <div class="post_movie-index">
             <div class="content-title">
                 <h1>みんなの投稿</h1>
+                <%= render 'post_movies/create_btn' %>
             </div>
             <% @post_movies.each do |post_movie| %>     
                 <%= link_to post_movie_path(post_movie.id),class:"post_movie-index-link"  do %>

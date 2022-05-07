@@ -1,4 +1,5 @@
 class PracticesController < ApplicationController
+  before_action :authenticate_user!
   def index
     @practices = current_user.practices
     

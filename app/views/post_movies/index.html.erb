@@ -1,0 +1,25 @@
+<div class="container-fluid post_movie-contents">
+    <div class="row">
+        <div class="post_movie-index">
+            <div class="content-title">
+                <h1>みんなの投稿</h1>
+                <% if user_signed_in? %>
+                    <%= render 'post_movies/create_btn' %>
+                <% end %>
+            </div>
+            <% @post_movies.each do |post_movie| %>     
+                <%= link_to post_movie_path(post_movie.id),class:"post_movie-index-link"  do %>
+                    <div class="post_movies-index-content">
+                        <div class="post_movie-img">
+                            <img src="http://img.youtube.com/vi/<%=post_movie.youtube_url%>/mqdefault.jpg" alt="">
+                        </div>
+                            <ul class="post_movie-lists">
+                                <li class="post_movie-list post_movie-list-title"><%= post_movie.title %></li>
+                                <li class="post_movie-list post_movie-list-body"><%= post_movie.body %></li>
+                            </ul>
+                        </div>
+                    <% end %>
+            <% end %>
+        </div>
+    </div>
+</div>

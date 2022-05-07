@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="aaa">
+              <div class="iframe-post_movie">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @post_movie.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </div>
+      </div><br>
+    
+    </div>
+    <div class="col post_movie-show">
+      <div class="post_movie-show-title">
+        <h2><%= @post_movie.title %></h2>
+         <p><%= @post_movie.user.name%></p>
+      </div>
+      <div class="post_movie-show-body">
+        <p><%= @post_movie.body%></p><br>
+      </div>
+      <% if @user == current_user %>
+              パスワード<%= @post_movie.password %>
+          <div class="edit-link post_movie_links">
+              <%= link_to "編集する", edit_post_movie_path(@post_movie), class: "btn btn-success" %>
+              <%= link_to "削除する", post_movie_path(@post_movie),method: :delete,class: "btn btn-danger",data: {confirm: "削除しますか？"}  %> 
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

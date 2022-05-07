@@ -1,0 +1,111 @@
+// Place all the styles related to the post_movies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$post_movie-font-color:#242423;
+.post_movie-index-link:hover{
+    text-decoration: none;
+}
+.post_movie-contents{
+    max-width:95%;
+    @media screen and (max-width:767px){
+        max-width: 100%;
+    }
+}
+.post_movie-index{
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 30px;
+    @media screen and (max-width:767px){
+        width: 95%;
+        margin-top: 20px;
+    }
+}
+.iframe-post_movie{
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    @media screen and (max-width:1024px){
+        width: 100%;
+        display: block;
+    }    
+}
+.post_movies-index-content{
+    border-top: 3px solid gray;
+    border-bottom: 3px solid gray;
+    color: $post_movie-font-color;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 15px;
+    display: flex;
+    
+    @media screen and (max-width:767px){
+        padding: 5px;
+        margin-top: 5px;
+    }
+    .post_movie-img{
+        display: flex;
+        @media screen and (max-width:1024px){
+            width: 80%;
+        }
+        @media screen and (max-width:767px){
+            width: 60%;
+        }
+        img{
+            max-width: 100%;
+            aspect-ratio: auto 480 / 360;
+            height: auto;
+           
+        }
+    }
+    .post_movie-lists{
+        list-style-type: none;
+        margin-top: 15px;
+        width: 100%;
+        
+        @media screen and (max-width:767px){
+            padding-left: 10px;
+            margin-top: 5px;
+            .post_movie-list-title{
+                font-size: 18px;
+                border: 3px solid gray;
+            }
+            .post_movie-list-body{
+                margin-top: 12px;
+            }
+        }
+        .post_movie-list-title{
+            font-size: 24px;
+            border-bottom: 3px solid gray;
+        }
+        .post_movie-list-body{
+            margin-top: 15px;
+        }
+        @media screen and (max-width:767px){
+            .post_movie-list-title{
+                font-size: 18px;
+                border-bottom: 1px solid $post_movie-font-color;
+            }
+            .post_movie-list-body{
+                margin-top: 12px;
+            }
+        }
+    }
+}
+
+//show.html
+.post_movie-show{
+    border: 2px solid #f2f2f2;
+    background-color: #fff;
+    padding: 20px 10px;
+}
+.post_movie-show-title{
+    font-size: 22px;
+    border-bottom:  2px solid gray;
+}
+.post_movie-show-body{
+    font-size: 18px;
+}
+.post_movie_links{
+    text-align: center;
+}

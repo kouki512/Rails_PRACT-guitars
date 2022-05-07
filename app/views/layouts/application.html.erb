@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- google adsence script tag-->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5207591261877701"
+     crossorigin="anonymous"></script>
   <% if Rails.env.production? %>
       <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-608L2GRQLX"></script>
@@ -49,13 +52,20 @@
                   <%= link_to "練習メニューを見る", practices_path,class:"header-btn gene-btn-hover header-link font-color" %>
                 </li>
                 <li class="nav-item">
-                  <%= link_to "新規作成", new_practice_path,class:"header-btn gene-btn-hover header-link font-color" %>
+                  <%= link_to "みんなの投稿を見てみる", post_movies_path,class:"header-btn gene-btn-hover header-link font-color" %>
                 </li>
 
                 <li class="nav-item">
                   <%= link_to "ログアウト", destroy_user_session_path, method: :delete,class:"header-btn gene-btn-hover header-link font-color" %>
                 </li>
+            <% elsif admin_signed_in?%>
+                <li class="nav-item">
+                  <%= link_to "管理者ログアウト", destroy_admin_session_path, method: :delete,class:"header-btn gene-btn-hover header-link font-color" %>
+                </li>
             <% else %>
+                <li class="nav-item">
+                  <%= link_to "みんなの投稿を見てみる", post_movies_path,class:"header-btn gene-btn-hover header-link font-color" %>
+                </li>
                 <li class="nav-item">
                   <%= link_to "新規登録 ",new_user_registration_path ,class:"header-btn gene-btn-hover font-color header-link"%>
                 </li>

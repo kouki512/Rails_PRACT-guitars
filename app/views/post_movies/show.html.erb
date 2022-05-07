@@ -17,8 +17,8 @@
       <div class="post_movie-show-body">
         <p><%= @post_movie.body%></p><br>
       </div>
-      <%= @post_movie.password %>
       <% if @user == current_user %>
+              パスワード<%= @post_movie.password %>
           <div class="edit-link post_movie_links">
               <%= link_to "編集する", edit_post_movie_path(@post_movie), class: "btn btn-success" %>
               <%= link_to "削除する", post_movie_path(@post_movie),method: :delete,class: "btn btn-danger",data: {confirm: "削除しますか？"}  %> 

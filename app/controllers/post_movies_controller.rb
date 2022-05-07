@@ -1,9 +1,13 @@
 class PostMoviesController < ApplicationController
+  before_action :authenticate_user!, except:[:index,:show,:certification]
     def index
         @post_movies = PostMovie.all
     end
     def new
         @post_movie = PostMovie.new
+        unless user_signed_in?
+          redirect_to post_movies_path
+        end
     end
 
     def create
@@ -27,21 +31,29 @@ class PostMoviesController < ApplicationController
 
     def edit
       @post_movie = PostMovie.find(params[:id])
+      unless @post_movie.user_id == current_user.id
+        redirect_to post_movies_path
+      end
     end
 
     def update
       @post_movie = PostMovie.find(params[:id])
-      @post_movie.youtube_url = make_youtube_links
-      @post_movie.update(
+      
+      if @post_movie.update(
         title: post_movie_params[:title],
         body: post_movie_params[:body],
         password: post_movie_params[:password]
       )
       redirect_to post_movie_path(@post_movie.id)
+      else
+        render :edit
+      end
     end
 
     def destroy
-
+      @post_movie = PostMovie.find(params[:id])
+      @post_movie.destroy
+      redirect_to post_movies_path
     end
 
     def certification
@@ -50,7 +62,7 @@ class PostMoviesController < ApplicationController
         session[:password_checker] = true
         redirect_back(fallback_location: root_path)
       else 
-        redirect_to post_movies_path
+        redirect_back(fallback_location: root_path)
       end
     end
 
